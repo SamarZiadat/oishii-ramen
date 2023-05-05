@@ -83,15 +83,29 @@ This epic is for all stories related to the registration, login and authorisatio
 This epic is for all stories that relate to creating, viewing, amending and deleting reservations. This allows staff to view and manage upcoming reservations, and for customers to book and manage their own reservations.
 
 -   As a site administrator, I should be able to cancel reservations from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(MUST HAVE)`
+- As a site administrator, I should be able to view all reservations, so that I am up to date with capacity. `(MUST HAVE)`
 -   As a site administrator, I should be able to edit a reservation from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(SHOULD HAVE)`
 - As a site administrator, I should be able to make a reservation for registered and unregistered users, so that I can make reservations for customers who do not use the website.  `(COULD HAVE)`
--   As a new site user, I would like to sign up and create an account, so that I can make and manage my reservation/s.  `(MUST HAVE)`
 -    As a registered user, I would like to make my reservation/s, so that I am guaranteed a seat when I visit the restaurant.  `(MUST HAVE)`
+- As a registered user, I should be able to cancel my reservation/s, so that I can keep the restaurant up-to-date with my booking.  `(MUST HAVE)`
 -   As a registered user, I would like to view my reservation/s, so that I can check the details when needed.  `(MUST HAVE)`
 -   As a registered user, I would like to amend my reservation/s, so that the restaurant is kept up-to-date with my booking.  `(MUST HAVE)`
 - As a registered user, I would like to easily navigate the site, so that I can easily access the information I need.  `(MUST HAVE)`
 -    As a registered user, I would like to amend my details, so that the restaurant has the most up-to-date details to identify me.  `(SHOULD HAVE)`
 -  As a registered user, I would like to reset my password if I forget it, so that I can regain access to my account.  `(SHOULD HAVE)`
+
+**Epic 4 - Deployment Epic**
+
+This epic is for all stories related to deploying the app to heroku so that the application is live for use.
+
+- As a developer, I need to deploy the project to heroku so that it is live for all users `(MUST HAVE)`
+
+**Epic 5 - Documentation**
+
+This epic is for all stories relating to the documentation of the software development lifecycle of the application, and how it can be utilised by users.
+
+- As a developer, I need to complete the readme documentation so that it an informative first contact that developers and users will have with the app  `(MUST HAVE)`
+-  As a developer, I need to complete testing of the app to ensure it works correctly and as expected `(MUST HAVE)`
 
 **Epic 4 - Deployment Epic**
 
