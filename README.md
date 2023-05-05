@@ -24,16 +24,16 @@
 	        -   Colour Scheme
 	        -   Typography
 	        -   Imagery
--   [Technologies]()
--   [Testing]()
--   [Deployment]()
-    -   Version Control
-    -   Heroku Deployment
-    -   Run Locally
-    -   Fork Project
--   [Credits]()
-    -   [Content]()
-    -   [Acknowledgements]()
+	-   [Technologies]()
+	-   [Testing]()
+	-   [Deployment]()
+	    -   Version Control
+	    -   Heroku Deployment
+	    -   Run Locally
+	    -   Fork Project
+	-   [Credits]()
+	    -   [Content]()
+	    -   [Acknowledgements]()
 
 ## User Experience Design (UX)
 
