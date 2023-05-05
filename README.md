@@ -66,7 +66,7 @@ This epic is for all stories needed for the base set up of the application. This
 - As a user, I would like to preview a selection of the restaurant's Instagram posts, so that I can get an idea of what they post on Instagram before I decide whether to follow them on Instagram or not.  `(COULD HAVE)`
 -   As a user, I want to be able to put the website into dark mode so that I can make the website easier to see at night.  `(COULD HAVE)`
 
-**2 - Authentication Epic**
+**Epic 2 - Authentication Epic**
 
 This epic is for all stories related to the registration, login and authorisation of views. This epic provides critical functionality; allowing staff and customers to view and manage reservations securely. It also excludes unauthorised users from being able to gain access to information or complete actions that they shouldn't.
 
@@ -78,7 +78,7 @@ This epic is for all stories related to the registration, login and authorisatio
 -   As a registered user, I would like to log in to my account, so that I can access my details and reservations.  `(MUST HAVE)`
 -   As a registered user, I would like to log out of my account, so that I can end my session on my current device.  `(MUST HAVE)`
 
-**3 - Reservations**
+**Epic 3 - Reservations**
 
 This epic is for all stories that relate to creating, viewing, amending and deleting reservations. This allows staff to view and manage upcoming reservations, and for customers to book and manage their own reservations.
 
@@ -93,13 +93,13 @@ This epic is for all stories that relate to creating, viewing, amending and dele
 -    As a registered user, I would like to amend my details, so that the restaurant has the most up-to-date details to identify me.  `(SHOULD HAVE)`
 -  As a registered user, I would like to reset my password if I forget it, so that I can regain access to my account.  `(SHOULD HAVE)`
 
-**4 - Deployment Epic**
+**Epic 4 - Deployment Epic**
 
 This epic is for all stories related to deploying the app to heroku so that the application is live for use.
 
 - As a developer, I need to deploy the project to heroku so that it is live for all users `(MUST HAVE)`
 
-**5 - Documentation**
+**Epic 5 - Documentation**
 
 This epic is for all stories relating to the documentation of the software development lifecycle of the application, and how it can be utilised by users.
 
