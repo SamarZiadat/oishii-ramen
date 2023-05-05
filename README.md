@@ -1,108 +1,115 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1  align="center">oishii ramen</h1>
 
-Welcome USER_NAME,
+[View the live project here](link)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+'oishii ramen' is an app designed and created for a fictional Japanese restaurant of the same name in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. The app is a management system designed for staff to view and manage customer reservations. It also provides customers with an online booking system where they can view and manage their own reservations.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
+- [User Experience Design (UX)]()
+	 -   [The Strategy Plane]()
+		    -   Site Goals
+		    -   Agile Methodology
+		    -   Epics
+		    -   User Stories
+	-   [The Scope Plane]()
+	-   [The Structure Plane]()
+	    -   Features
+	    -   Future Features
+	-   [The Skeleton Plane]()
+	    -   Wireframes
+	    -   Database Design
+	    -   Security
+	-   [The Surface Plane]()
+	    -   Design
+	        -   Colour Scheme
+	        -   Typography
+	        -   Imagery
+-   [Technologies]()
+-   [Testing]()
+-   [Deployment]()
+    -   Version Control
+    -   Heroku Deployment
+    -   Run Locally
+    -   Fork Project
+-   [Credits]()
+    -   [Content]()
+    -   [Acknowledgements]()
 
-## Gitpod Reminders
+## User Experience Design (UX)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### The Strategy Plane
 
-`python3 -m http.server`
+#### Site Goals
+The site is aimed to help restaurant staff to easily view, keep up-to-date-with and manage upcoming reservations, editing and deleting these bookings as necessary.
 
-A blue button should appear to click: _Make Public_,
+The site also aims to provide customers with an online system to book, update or cancel reservations without the need to call or email the restaurant. 
 
-Another blue button should appear to click: _Open Browser_.
+#### Agile Methodology
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This project was managed using agile methodologies by delivering small features in incremental sprints. There were 4 sprints in total, spaced out evenly over four weeks. A kanban board was created using github projects and was utilised as a project management tool to help visualise work, limit work-in-progress, and maximise efficiency/flow. The Kanban board can be viewed [here](https://github.com/SamarZiadat/oishii-ramen/projects). 
 
-A blue button should appear to click: _Make Public_,
+All requirements were created in relation to the user stories. Requirements were then assigned to epics (milestones) and prioritised with the labels 'must have', 'should have' or 'could have'. All 5 epics were organised within sprints, and requirements were completed in order of: 'must have' stories first, 'should have' stories, and then finally "could have" stories. This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
 
-Another blue button should appear to click: _Open Browser_.
+[IMAGE OF KANBAN]
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### User Stories
 
-To log into the Heroku toolbelt CLI:
+**Epic 1 - Base Setup**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+This epic is for all stories needed for the base set up of the application. This was the first epic to be delivered as all other features depend on this structure's existence.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+-   As a new user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up for an account.  `(MUST HAVE)`
+- As a new user, I would like to easily navigate the site, so that I can easily access the information I need.  `(MUST HAVE)`
+-   As a user, I would like access the restaurants contact details, so that I can easily get in touch.  `(MUST HAVE)`
+-   As a user, I would like to easily find the restaurant's social media channels, so that I can stay up-to-date with the business online.  `(MUST HAVE)`
+-  As a user, I would like view the restaurant location on Google Maps, so that I can easily access directions to the venue.  `(SHOULD HAVE)`
+- As a user, I would like to preview a selection of the restaurant's Instagram posts, so that I can get an idea of what they post on Instagram before I decide whether to follow them on Instagram or not.  `(COULD HAVE)`
+-   As a user, I want to be able to put the website into dark mode so that I can make the website easier to see at night.  `(COULD HAVE)`
 
-------
+**2 - Authentication Epic**
 
-## Release History
+This epic is for all stories related to the registration, login and authorisation of views. This epic provides critical functionality; allowing staff and customers to view and manage reservations securely. It also excludes unauthorised users from being able to gain access to information or complete actions that they shouldn't.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+-   As a site administrator, I should be able to access an area only for restaurant staff to see, so that I can view and manage all the existing customer reservations securely.  `(MUST HAVE)`
+-  As a site administrator, I would like to log in to my area, so that I can access and manage information securely.  `(MUST HAVE)`
+-   As a site administrator, I would like to log out of my account, so that I can end my session on my current device.  `(MUST HAVE)`
+- As a new user, I should be able to sign up for an area only for me to see, so that I can view and manage my reservations and personal information securely.  `(MUST HAVE)`
+- As a registered user, I should be able to access an area only for me to see, so that I can view and manage my reservations and personal information securely.  `(MUST HAVE)`
+-   As a registered user, I would like to log in to my account, so that I can access my details and reservations.  `(MUST HAVE)`
+-   As a registered user, I would like to log out of my account, so that I can end my session on my current device.  `(MUST HAVE)`
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+**3 - Reservations**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+This epic is for all stories that relate to creating, viewing, amending and deleting reservations. This allows staff to view and manage upcoming reservations, and for customers to book and manage their own reservations.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+-   As a site administrator, I should be able to cancel reservations from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(MUST HAVE)`
+-   As a site administrator, I should be able to edit a reservation from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(SHOULD HAVE)`
+- As a site administrator, I should be able to make a reservation for registered and unregistered users, so that I can make reservations for customers who do not use the website.  `(COULD HAVE)`
+-   As a new site user, I would like to sign up and create an account, so that I can make and manage my reservation/s.  `(MUST HAVE)`
+-    As a registered user, I would like to make my reservation/s, so that I am guaranteed a seat when I visit the restaurant.  `(MUST HAVE)`
+-   As a registered user, I would like to view my reservation/s, so that I can check the details when needed.  `(MUST HAVE)`
+-   As a registered user, I would like to amend my reservation/s, so that the restaurant is kept up-to-date with my booking.  `(MUST HAVE)`
+- As a registered user, I would like to easily navigate the site, so that I can easily access the information I need.  `(MUST HAVE)`
+-    As a registered user, I would like to amend my details, so that the restaurant has the most up-to-date details to identify me.  `(SHOULD HAVE)`
+-  As a registered user, I would like to reset my password if I forget it, so that I can regain access to my account.  `(SHOULD HAVE)`
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+**4 - Deployment Epic**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This epic is for all stories related to deploying the app to heroku so that the application is live for use.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- As a developer, I need to deploy the project to heroku so that it is live for all users `(MUST HAVE)`
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**5 - Documentation**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+This epic is for all stories relating to the documentation of the software development lifecycle of the application, and how it can be utilised by users.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- As a developer, I need to complete the readme documentation so that it an informative first contact that developers and users will have with the app  `(MUST HAVE)`
+-  As a developer, I need to complete testing of the app to ensure it works correctly and as expected `(MUST HAVE)`
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### The Scope Plane
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+-   Home page with restaurant information
+-   Responsive Design - the app should be fully functional on all devices from 320px up
+-   Hamburger menu for devices with a smaller viewport devices
+- Ability to perform CRUD functionality on reservations
+-   Restricted role based features
