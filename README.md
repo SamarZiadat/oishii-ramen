@@ -107,19 +107,6 @@ This epic is for all stories relating to the documentation of the software devel
 - As a developer, I need to complete the readme documentation so that it an informative first contact that developers and users will have with the app  `(MUST HAVE)`
 -  As a developer, I need to complete testing of the app to ensure it works correctly and as expected `(MUST HAVE)`
 
-**Epic 4 - Deployment Epic**
-
-This epic is for all stories related to deploying the app to heroku so that the application is live for use.
-
-- As a developer, I need to deploy the project to heroku so that it is live for all users `(MUST HAVE)`
-
-**Epic 5 - Documentation**
-
-This epic is for all stories relating to the documentation of the software development lifecycle of the application, and how it can be utilised by users.
-
-- As a developer, I need to complete the readme documentation so that it an informative first contact that developers and users will have with the app  `(MUST HAVE)`
--  As a developer, I need to complete testing of the app to ensure it works correctly and as expected `(MUST HAVE)`
-
 ### The Scope Plane
 
 -   Home page with restaurant information
