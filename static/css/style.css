@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=DM+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,5 +8,75 @@
 }
 
 body {
-    color: red;
+    font-family: Cantarell, sans-serif;
+    font-size: 100%;
+    color: #100B00;
+    max-width: 2000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.25em;
+    color: #C80000;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+i {
+    color: #F0A202;
+}
+
+a {
+    text-decoration: none;
+    color: #100B00;
+}
+
+a:hover {
+    color: #F0A202;
+}
+
+/* Content Containers */
+
+.content-container {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+/* Nav Bar */
+
+.nav-link {
+    color: #100B00;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #F0A202;
+}
+
+/* Footer */
+
+.footer-h2 {
+    padding-bottom: 10px;
+}
+
+.footer-contact, .footer-address, .footer-times {
+    padding-top: 2em;
+}
+
+.footer-copyright {
+    padding-top: 3em;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-size: 0.8em;
 }
