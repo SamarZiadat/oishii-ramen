@@ -22,7 +22,11 @@
     <!-- Header -->
     {% include 'includes/navigation.html' %}
 
-    <h1>Test</h1>
+    <main>
+            {% block content %}
+            <!-- Content Goes here -->
+            {% endblock content %}
+    </main>
 
     <!-- Footer -->
     {% include 'includes/footer.html' %}
