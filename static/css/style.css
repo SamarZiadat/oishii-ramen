@@ -68,7 +68,9 @@ a:hover {
     padding-bottom: 10px;
 }
 
-.footer-contact, .footer-address, .footer-times {
+.footer-contact,
+.footer-address,
+.footer-times {
     padding-top: 2em;
 }
 
@@ -79,4 +81,16 @@ a:hover {
     margin-left: auto;
     text-transform: uppercase;
     font-size: 0.8em;
+}
+
+/* Media Query - adjusts flex in footer and width
+form on screens smaller than boostrap lg */
+
+@media only screen and (max-width: 992px) {
+
+    .footer-contact,
+    .footer-address,
+    .footer-times {
+        text-align: center;
+    }
 }
