@@ -1,6 +1,6 @@
 <h1  align="center">oishii ramen</h1>
 
-[View the live project here](link)
+[View the live project here](https://oishii-ramen.herokuapp.com/)
 
 'oishii ramen' is an app designed and created for a fictional Japanese restaurant of the same name in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. The app is a management system designed for staff to view and manage customer reservations. It also provides customers with an online booking system where they can view and manage their own reservations.
 
