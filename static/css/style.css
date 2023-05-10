@@ -62,6 +62,10 @@ a:hover {
     color: #F0A202;
 }
 
+.navbar {
+    padding: 1em 4em;
+}
+
 /* Footer */
 
 .footer-h2 {
