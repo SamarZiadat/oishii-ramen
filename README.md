@@ -5,35 +5,34 @@
 'oishii ramen' is an app designed and created for a fictional Japanese restaurant of the same name in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. The app is a management system designed for staff to view and manage customer reservations. It also provides customers with an online booking system where they can view and manage their own reservations.
 
 ## Table of Contents
-- [User Experience Design (UX)]()
-	 -   [The Strategy Plane]()
-		    -   Site Goals
-		    -   Agile Methodology
-		    -   Epics
-		    -   User Stories
-	-   [The Scope Plane]()
-	-   [The Structure Plane]()
-	    -   Features
-	    -   Future Features
-	-   [The Skeleton Plane]()
-	    -   Wireframes
-	    -   Database Design
-	    -   Security
-	-   [The Surface Plane]()
-	    -   Design
-	        -   Colour Scheme
-	        -   Typography
-	        -   Imagery
-	-   [Technologies]()
-	-   [Testing]()
-	-   [Deployment]()
-	    -   Version Control
-	    -   Heroku Deployment
-	    -   Run Locally
-	    -   Fork Project
-	-   [Credits]()
-	    -   [Content]()
-	    -   [Acknowledgements]()
+- [User Experience Design (UX)](https://github.com/SamarZiadat/oishii-ramen#user-experience-design-ux)
+	 -   [The Strategy Plane](https://github.com/SamarZiadat/oishii-ramen#the-strategy-plane)
+		    -   [Site Goals](https://github.com/SamarZiadat/oishii-ramen#site-goals)
+		    -   [Agile Project Management](https://github.com/SamarZiadat/oishii-ramen#agile-project-management)
+		    -   [User Stories](https://github.com/SamarZiadat/oishii-ramen#user-stories)
+	-   [The Scope Plane](https://github.com/SamarZiadat/oishii-ramen#the-scope-plane)
+	-   [The Structure Plane](https://github.com/SamarZiadat/oishii-ramen#the-structure-plane)
+	    -   [Features](https://github.com/SamarZiadat/oishii-ramen#features)
+	    -   [Future Features](https://github.com/SamarZiadat/oishii-ramen#future-features)
+	-   [The Skeleton Plane](https://github.com/SamarZiadat/oishii-ramen#the-skeleton-plane)
+	    -   [Wireframes](https://github.com/SamarZiadat/oishii-ramen#wireframes)
+	    -   [Database Design](https://github.com/SamarZiadat/oishii-ramen#database-design)
+	    -   [Security](https://github.com/SamarZiadat/oishii-ramen#security)
+	-   [The Surface Plane](https://github.com/SamarZiadat/oishii-ramen#the-surface-plane)
+	    -   [Design](https://github.com/SamarZiadat/oishii-ramen#design)
+	        -   [Colour Scheme](https://github.com/SamarZiadat/oishii-ramen#colour-scheme)
+	        -   [Typography](https://github.com/SamarZiadat/oishii-ramen#typography)
+	        -   [Imagery](https://github.com/SamarZiadat/oishii-ramen#imagery)
+	-   [Technologies](https://github.com/SamarZiadat/oishii-ramen#technologies)
+	-   [Testing](https://github.com/SamarZiadat/oishii-ramen#testing)
+	-   [Deployment](https://github.com/SamarZiadat/oishii-ramen#deployment)
+	    -   [Version Control](https://github.com/SamarZiadat/oishii-ramen#version-control)
+	    -   [Heroku Deployment](https://github.com/SamarZiadat/oishii-ramen#heroku-deployment)
+	    -   [Run Locally](https://github.com/SamarZiadat/oishii-ramen#run-locally)
+	    -   [Fork Project](https://github.com/SamarZiadat/oishii-ramen#fork-project)
+	-   [Credits](https://github.com/SamarZiadat/oishii-ramen#heroku-credits)
+	    -   [Content](https://github.com/SamarZiadat/oishii-ramen#content)
+	    -   [Acknowledgements](https://github.com/SamarZiadat/oishii-ramen#acknowledgements)
 
 ## User Experience Design (UX)
 
@@ -44,7 +43,7 @@ The site is aimed to help restaurant staff to easily view, keep up-to-date-with 
 
 The site also aims to provide customers with an online system to book, update or cancel reservations without the need to call or email the restaurant. 
 
-#### Agile Methodology
+#### Agile Project Management
 
 This project was managed using agile methodologies by delivering small features in incremental sprints. There were 4 sprints in total, spaced out evenly over four weeks. A kanban board was created using github projects and was utilised as a project management tool to help visualise work, limit work-in-progress, and maximise efficiency/flow. The Kanban board can be viewed [here](https://github.com/SamarZiadat/oishii-ramen/projects). 
 
