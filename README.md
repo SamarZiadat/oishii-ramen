@@ -2,18 +2,15 @@
 
 [View the live project here](https://oishii-ramen.herokuapp.com/)
 
-'oishii ramen' is a project designed and created for a fictional Japanese cookery course provider in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. 
+'oishii ramen' is a project designed and created for a fictional Japanese cookery course provider in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. The project functions as a website that provides details on the business and cookery courses that it facilitates on its premises. 
 
-The project includes an application which functions as a website that provides details on the cookery courses that oishii ramen facilitates on its premises. 
-
-General users can view information on these courses such as a description of the course and the skill level advised for attendees. Users can also sign up for the website, which provides them with additional functionality, such as the ability to manage their course bookings and leave reviews.
+The website can be used by general users to view information on these courses, such as a description of the course and the skill level advised for attendees. Users can also sign up for the website, which provides them with additional functionality, such as the ability to manage their course bookings and leave reviews.
 
 Staff at oishii ramen can use the admin login of the website to draft and publish courses, remove courses, approve user reviews, timetable the courses, and confirm/approve bookings for timetabled courses depending on available capacity.
 
 ## Table of Contents
 - [User Experience Design (UX)](https://github.com/SamarZiadat/oishii-ramen#user-experience-design-ux)
 	 -   [The Strategy Plane](https://github.com/SamarZiadat/oishii-ramen#the-strategy-plane)
-		    -   [Site Goals](https://github.com/SamarZiadat/oishii-ramen#site-goals)
 		    -   [Agile Project Management](https://github.com/SamarZiadat/oishii-ramen#agile-project-management)
 		    -   [User Stories](https://github.com/SamarZiadat/oishii-ramen#user-stories)
 	-   [The Scope Plane](https://github.com/SamarZiadat/oishii-ramen#the-scope-plane)
@@ -44,16 +41,11 @@ Staff at oishii ramen can use the admin login of the website to draft and publis
 
 ### The Strategy Plane
 
-#### Site Goals
-The site is aimed to help restaurant staff to easily view, keep up-to-date-with and manage upcoming reservations, editing and deleting these bookings as necessary.
-
-The site also aims to provide customers with an online system to book, update or cancel reservations without the need to call or email the restaurant. 
-
 #### Agile Project Management
 
 This project was managed using agile methodologies by delivering small features in incremental sprints. There were 4 sprints in total, spaced out evenly over four weeks. A kanban board was created using github projects and was utilised as a project management tool to help visualise work, limit work-in-progress, and maximise efficiency/flow. The Kanban board can be viewed [here](https://github.com/SamarZiadat/oishii-ramen/projects). 
 
-All requirements were created in relation to the user stories. Requirements were then assigned to epics (milestones) and prioritised with the labels 'must have', 'should have' or 'could have'. All 5 epics were organised within sprints, and requirements were completed in order of: 'must have' stories first, 'should have' stories, and then finally "could have" stories. This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
+All requirements were created in relation to the user stories. Requirements were then assigned to epics (milestones) and prioritised with the labels 'must have', 'should have' or 'could have'. All epics were organised within sprints, and requirements were completed in order of: 'must have' , then 'should have', and then finally "could have". This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
 
 [IMAGE OF KANBAN]
 
@@ -92,7 +84,7 @@ All requirements were created in relation to the user stories. Requirements were
 
 ### The Scope Plane
 
--   Home page with restaurant information
+-   Home page with project information
 -   Responsive Design - the app should be fully functional on all devices from 320px up
 -   Hamburger menu for devices with a smaller viewport devices
 - Ability to perform CRUD functionality on reservations
