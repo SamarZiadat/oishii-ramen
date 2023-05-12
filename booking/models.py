@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator
 
 SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
+LOCATION = ((0, "Kitchen, Oishii Ramen"), (1, "Workshop Room, Oishii Ramen"))
 
 
 class Course(models.Model):
@@ -12,7 +13,7 @@ class Course(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
-    location = models.CharField(max_length=100, unique=True)
+    location = models.IntegerField(choices=LOCATION)
     featured_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
