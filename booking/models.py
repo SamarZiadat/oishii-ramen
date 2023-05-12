@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator
 
 SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
 
+
 class Course(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
@@ -20,9 +21,11 @@ class Course(models.Model):
     def __str__(self):
         return self.title
 
+
 class Review(models.Model):
+
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
-                             related_name='reviews')
+                               related_name='reviews')
     username = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_reviews")
     message = models.TextField()
@@ -35,9 +38,11 @@ class Review(models.Model):
     def __str__(self):
         return f'Review {self.message} by {self.username}'
 
+
 class Timetable(models.Model):
+
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
-                             related_name='timetabled_course')
+                               related_name='timetabled_course')
     starts = models.DateTimeField()
     ends = models.DateTimeField()
     location = models.CharField(max_length=200)
@@ -50,11 +55,13 @@ class Timetable(models.Model):
         ]
 
     def __str__(self):
-        return f'Course {self.course} takes place from {self.starts} to {self.ends}'
+        return f'Course {self.course} takes place from {self.starts} \
+            to {self.ends}'
+
 
 class Booking(models.Model):
     course = models.ForeignKey(Timetable, on_delete=models.CASCADE,
-                             related_name='course_bookings')
+                               related_name='course_bookings')
     username = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_bookings")
     places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
