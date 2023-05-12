@@ -29,7 +29,7 @@ class Review(models.Model):
                                related_name='reviews')
     username = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_reviews")
-    message = models.TextField()
+    written_review = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
