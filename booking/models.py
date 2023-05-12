@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
+
 class Course(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
-    skill_level = models.IntegerField(choices=SKILLLEVEL)
+    skill_level = models.IntegerField(choices=SKILL_LEVEL)
     location = models.CharField(max_length=100, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
 
