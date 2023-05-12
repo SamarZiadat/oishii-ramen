@@ -2,7 +2,13 @@
 
 [View the live project here](https://oishii-ramen.herokuapp.com/)
 
-'oishii ramen' is an app designed and created for a fictional Japanese restaurant of the same name in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. The app is a management system designed for staff to view and manage customer reservations. It also provides customers with an online booking system where they can view and manage their own reservations.
+'oishii ramen' is a project designed and created for a fictional Japanese cookery course provider in Glasgow, Scotland. The Japanese word 'oishii' means 'delicious' or 'tasty' in English. 
+
+The project includes an application which functions as a website that provides details on the cookery courses that oishii ramen facilitates on its premises. 
+
+General users can view information on these courses such as a description of the course and the skill level advised for attendees. Users can also sign up for the website, which provides them with additional functionality, such as the ability to manage their course bookings and leave reviews.
+
+Staff at oishii ramen can use the admin login of the website to draft and publish courses, remove courses, approve user reviews, timetable the courses, and confirm/approve bookings for timetabled courses depending on available capacity.
 
 ## Table of Contents
 - [User Experience Design (UX)](https://github.com/SamarZiadat/oishii-ramen#user-experience-design-ux)
