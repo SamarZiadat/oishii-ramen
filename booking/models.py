@@ -4,17 +4,17 @@ from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator
 
 SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
-LOCATION = ((0, "Kitchen, Oishii Ramen"), (1, "Workshop Room, Oishii Ramen"))
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Course(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    content = models.TextField()
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
-    location = models.IntegerField(choices=LOCATION)
+    content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['skill_level']
@@ -25,10 +25,10 @@ class Course(models.Model):
 
 class Review(models.Model):
 
-    course = models.ForeignKey(Course, on_delete=models.CASCADE,
-                               related_name='reviews')
     username = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_reviews")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE,
+                               related_name='reviews')
     written_review = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -46,7 +46,6 @@ class Timetable(models.Model):
                                related_name='timetabled_course')
     starts = models.DateTimeField()
     ends = models.DateTimeField()
-    location = models.CharField(max_length=200)
 
     class Meta:
         ordering = ['starts']
@@ -56,8 +55,8 @@ class Timetable(models.Model):
         ]
 
     def __str__(self):
-        return f'Course {self.course} takes place from {self.starts} \
-            to {self.ends}'
+        return f'Course {self.course} takes place in the {self.location} on \
+            {self.date} from {self.starts} to {self.ends}'
 
 
 class Booking(models.Model):
