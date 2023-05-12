@@ -8,7 +8,6 @@ class Course(models.Model):
     content = models.TextField()
     skill_level = models.IntegerField(choices=SKILLLEVEL)
     location = models.CharField(max_length=100, unique=True)
-    duration_hrs = models.DecimalField(max_digits=1, decimal_places=2)
     featured_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
@@ -31,3 +30,31 @@ class Review(models.Model):
 
     def __str__(self):
         return f'Review {self.message} by {self.username}'
+
+class Timetable(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE,
+                             related_name='timetabled_course')
+    starts = models.DateTimeField()
+    ends = models.DateTimeField()
+    location = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['starts']
+        constraints = [
+            models.UniqueConstraint(fields=['course', 'starts'],
+                                    name='unique_course'),
+        ]
+
+    def __str__(self):
+        return f'Course {self.course} takes place from {self.starts} to {self.ends}'
+
+class Booking(models.Model):
+    course = models.ForeignKey(Schedule, on_delete=models.CASCADE,
+                             related_name='course_bookings')
+    username = models.ForeignKey(User, on_delete=models.CASCADE,
+                                 related_name="user_bookings")
+    places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.username} has booked {self.course}'
