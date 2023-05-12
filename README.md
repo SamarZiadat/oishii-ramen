@@ -53,58 +53,36 @@ All requirements were created in relation to the user stories. Requirements were
 
 #### User Stories
 
-**Epic 1 - Base Setup**
-
-This epic is for all stories needed for the base set up of the application. This was the first epic to be delivered as all other features depend on this structure's existence.
-
--   As a new user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up for an account.  `(MUST HAVE)`
-- As a new user, I would like to easily navigate the site, so that I can easily access the information I need.  `(MUST HAVE)`
--   As a user, I would like access the restaurants contact details, so that I can easily get in touch.  `(MUST HAVE)`
--   As a user, I would like to easily find the restaurant's social media channels, so that I can stay up-to-date with the business online.  `(MUST HAVE)`
--  As a user, I would like view the restaurant location on Google Maps, so that I can easily access directions to the venue.  `(SHOULD HAVE)`
-- As a user, I would like to preview a selection of the restaurant's Instagram posts, so that I can get an idea of what they post on Instagram before I decide whether to follow them on Instagram or not.  `(COULD HAVE)`
--   As a user, I want to be able to put the website into dark mode so that I can make the website easier to see at night.  `(COULD HAVE)`
-
-**Epic 2 - Authentication Epic**
-
-This epic is for all stories related to the registration, login and authorisation of views. This epic provides critical functionality; allowing staff and customers to view and manage reservations securely. It also excludes unauthorised users from being able to gain access to information or complete actions that they shouldn't.
-
--   As a site administrator, I should be able to access an area only for restaurant staff to see, so that I can view and manage all the existing customer reservations securely.  `(MUST HAVE)`
--  As a site administrator, I would like to log in to my area, so that I can access and manage information securely.  `(MUST HAVE)`
--   As a site administrator, I would like to log out of my account, so that I can end my session on my current device.  `(MUST HAVE)`
-- As a new user, I should be able to sign up for an area only for me to see, so that I can view and manage my reservations and personal information securely.  `(MUST HAVE)`
-- As a registered user, I should be able to access an area only for me to see, so that I can view and manage my reservations and personal information securely.  `(MUST HAVE)`
--   As a registered user, I would like to log in to my account, so that I can access my details and reservations.  `(MUST HAVE)`
--   As a registered user, I would like to log out of my account, so that I can end my session on my current device.  `(MUST HAVE)`
-
-**Epic 3 - Reservations**
-
-This epic is for all stories that relate to creating, viewing, amending and deleting reservations. This allows staff to view and manage upcoming reservations, and for customers to book and manage their own reservations.
-
--   As a site administrator, I should be able to cancel reservations from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(MUST HAVE)`
-- As a site administrator, I should be able to view all reservations, so that I am up to date with capacity. `(MUST HAVE)`
--   As a site administrator, I should be able to edit a reservation from any registered user, so that I can keep the restaurant bookings up-to-date for both staff and customers.  `(SHOULD HAVE)`
-- As a site administrator, I should be able to make a reservation for registered and unregistered users, so that I can make reservations for customers who do not use the website.  `(COULD HAVE)`
--    As a registered user, I would like to make my reservation/s, so that I am guaranteed a seat when I visit the restaurant.  `(MUST HAVE)`
-- As a registered user, I should be able to cancel my reservation/s, so that I can keep the restaurant up-to-date with my booking.  `(MUST HAVE)`
--   As a registered user, I would like to view my reservation/s, so that I can check the details when needed.  `(MUST HAVE)`
--   As a registered user, I would like to amend my reservation/s, so that the restaurant is kept up-to-date with my booking.  `(MUST HAVE)`
-- As a registered user, I would like to easily navigate the site, so that I can easily access the information I need.  `(MUST HAVE)`
--    As a registered user, I would like to amend my details, so that the restaurant has the most up-to-date details to identify me.  `(SHOULD HAVE)`
--  As a registered user, I would like to reset my password if I forget it, so that I can regain access to my account.  `(SHOULD HAVE)`
-
-**Epic 4 - Deployment Epic**
-
-This epic is for all stories related to deploying the app to heroku so that the application is live for use.
-
-- As a developer, I need to deploy the project to heroku so that it is live for all users `(MUST HAVE)`
-
-**Epic 5 - Documentation**
-
-This epic is for all stories relating to the documentation of the software development lifecycle of the application, and how it can be utilised by users.
-
-- As a developer, I need to complete the readme documentation so that it an informative first contact that developers and users will have with the app  `(MUST HAVE)`
--  As a developer, I need to complete testing of the app to ensure it works correctly and as expected `(MUST HAVE)`
+-   US01: Illustrate purpose of application through UI
+    -   As a  **Site User**  I can  **view the home page**  so that  **clearly understand the application purpose**
+-   US02: Navigate
+    -   As a  **Site User**  I can  **use the navigation bar**  so that  **I can easily easily navigate the application **
+-   US03: View courses
+    -   As a  **Site User**  I can  **view the courses available**  so that  **I can explore them in more detail**
+-   US04: View course information
+    -   As a  **Site User**  I can  **click on a course**  so that  **I can learn more about it**
+-   US05: Book a hike
+    -   As a  **Site User**  I can  **book a timetabled course**  so that  **I can reserve places for myself and those accompanying me**
+-   US06: View my booked courses
+    -   As a  **Site User**  I can  **access a list of courses I have booked on to**  so that  **I can see the upcoming courses I have booked to attend**
+-   US07: Cancel a booking
+    -   As a  **Site User**  I can  **cancel an upcoming course I have booked onto**  so that  **my place can be reserved by someone else**
+-   US08: Review a course
+    -   As a  **Site User**  I can  **attach a review to a course**  so that  **I can give feedback and be involved in the community of attendees**
+-   US11: View reviews
+    -   As a  **Site User**  I can  **view reviews on individual courses**  so that  **I can make an informed decision on whether I would like to attend this course**
+-   US12: Approve reviews
+    -   As a  **Site Admin**  I can  **assess and then approve or disapprove reviews**  so that  **inappropriate content can be filtered out**
+-   US13: Account registration and login
+    -   As a  **Site User**  I can  **register for an account**  so that  **I can log in and then book a course, , view my upcoming and past bookings, and leave reviews on courses**
+-   US14: Manage courses
+    -   As a  **Site Admin**  I can  **create, read, update and delete courses and their timetables**  so that  **I can manage course details and availability**
+-   US15: Create course drafts
+    -   As a  **Site Admin**  I can  **create drafts for courses**  so that  **I can finish producing the content at a later date and publish once approved**
+-   US16 Approve bookings
+    -   As a  **Site Admin**  I can  **view and then approve or disapprove bookings**  so that  **course capacity can be managed**
+-   US17 View past courses
+    -   As a  **Site User**  I can  **access a list of past courses that I booked**  so that  **I can track courses I have completed**
 
 ### The Scope Plane
 
