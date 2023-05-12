@@ -52,7 +52,7 @@ class Timetable(models.Model):
         return f'Course {self.course} takes place from {self.starts} to {self.ends}'
 
 class Booking(models.Model):
-    course = models.ForeignKey(Schedule, on_delete=models.CASCADE,
+    course = models.ForeignKey(Timetable, on_delete=models.CASCADE,
                              related_name='course_bookings')
     username = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_bookings")
