@@ -50,6 +50,15 @@ a:hover {
     padding-bottom: 4em;
 }
 
+/* Index */
+
+.home-heading {
+    text-align: center;
+    color: #F0A202;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
 /* Nav Bar */
 
 .nav-link {
