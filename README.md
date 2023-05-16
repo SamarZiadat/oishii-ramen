@@ -45,7 +45,7 @@ Staff at oishii ramen can use the admin login of the website to draft and publis
 
 This project was managed using agile methodologies by delivering small features in incremental sprints. There were 4 sprints in total, spaced out evenly over four weeks. A kanban board was created using github projects and was utilised as a project management tool to help visualise work, limit work-in-progress, and maximise efficiency/flow. The Kanban board can be viewed [here](https://github.com/SamarZiadat/oishii-ramen/projects). 
 
-All requirements were created in relation to the user stories. Requirements were then assigned to epics (milestones) and prioritised with the labels 'must have', 'should have' or 'could have'. All epics were organised within sprints, and requirements were completed in order of: 'must have' , then 'should have', and then finally "could have". This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
+Acceptance criteria was created in relation to each of the user stories. These stories were then assigned to an epic, and prioritised with the labels 'must have', 'should have' or 'could have'. All stories were organised within sprints, and acceptance criteria was completed in order of: 'must have' , then 'should have', and finally "could have". This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
 
 [IMAGE OF KANBAN]
 
@@ -59,7 +59,7 @@ All requirements were created in relation to the user stories. Requirements were
     -   As a  **Site User**  I can  **view the courses available**  so that  **I can explore them in more detail**
 -   US04: View course information
     -   As a  **Site User**  I can  **click on a course**  so that  **I can learn more about it**
--   US05: Book a hike
+-   US05: Book a course
     -   As a  **Site User**  I can  **book a timetabled course**  so that  **I can reserve places for myself and those accompanying me**
 -   US06: View my booked courses
     -   As a  **Site User**  I can  **access a list of courses I have booked on to**  so that  **I can see the upcoming courses I have booked to attend**
@@ -67,25 +67,25 @@ All requirements were created in relation to the user stories. Requirements were
     -   As a  **Site User**  I can  **cancel an upcoming course I have booked onto**  so that  **my place can be reserved by someone else**
 -   US08: Review a course
     -   As a  **Site User**  I can  **attach a review to a course**  so that  **I can give feedback and be involved in the community of attendees**
--   US11: View reviews
+-   US09: View reviews
     -   As a  **Site User**  I can  **view reviews on individual courses**  so that  **I can make an informed decision on whether I would like to attend this course**
--   US12: Approve reviews
+-   US10: Approve reviews
     -   As a  **Site Admin**  I can  **assess and then approve or disapprove reviews**  so that  **inappropriate content can be filtered out**
--   US13: Account registration and login
+-   US11: Account registration and login
     -   As a  **Site User**  I can  **register for an account**  so that  **I can log in and then book a course, , view my upcoming and past bookings, and leave reviews on courses**
--   US14: Manage courses
+-   US12: Manage courses
     -   As a  **Site Admin**  I can  **create, read, update and delete courses and their timetables**  so that  **I can manage course details and availability**
--   US15: Create course drafts
+-   US13: Create course drafts
     -   As a  **Site Admin**  I can  **create drafts for courses**  so that  **I can finish producing the content at a later date and publish once approved**
--   US16 Approve bookings
+-   US14 Approve bookings
     -   As a  **Site Admin**  I can  **view and then approve or disapprove bookings**  so that  **course capacity can be managed**
--   US17 View past courses
+-   US15 View past courses
     -   As a  **Site User**  I can  **access a list of past courses that I booked**  so that  **I can track courses I have completed**
 
 ### The Scope Plane
 
--   Home page with project information
+-   Home page with app information
 -   Responsive Design - the app should be fully functional on all devices from 320px up
 -   Hamburger menu for devices with a smaller viewport devices
-- Ability to perform CRUD functionality on reservations
+- 	Ability to perform CRUD functionality on reservations
 -   Restricted role based features
