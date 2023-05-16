@@ -6,9 +6,69 @@
 
 <!-- Hero -->
 <section class="hero-section">
-    <img src="{% static 'images/hero-image.webp' %}" class="img-fluid"
-        alt="Image of noodles">
+    <img src="{% static 'images/hero-image.webp' %}" class="img-fluid" alt="Image of noodles">
 </section>
 <!-- /.hero -->
 
-{%endblock%}
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Course Summaries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for course in course_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in course.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/cloudebr/image/upload/v1632744141/static/media/images/default_hike_pic_ni7pzb.jpg"
+                                    alt="Default course image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ course.featured_image.url }}">
+                                {% endif %}
+
+                                <a href="{% url 'course_detail' course.slug %}" class="hike-link">
+                                    <h2 class="card-title hike-title">{{ hike.title }}</h2>
+                                    <p class="card-text">
+                                        Distance: {{ hike.distance_km.normalize }} kms<br>
+                                        Estimated Duration: {{ hike.est_duration_hrs.normalize }} hrs
+                                    </p>
+                                </a>
+                                <a href="{% url 'course_detail' course.slug %}" class="post-link">
+                                    <h3 class="card-title">{{ course.title }}</h2>
+                                        {% if course.skill_level == 0 %}
+                                        <p><span class="badge text-bg-primary">Beginner</span></p>
+                                        {% elif course.skill_level == 1 %}
+                                        <p><span class="badge text-bg-warning">Intermediate</span></p>
+                                        {% elif course.skill_level == 2 %}
+                                        <p><span class="badge text-bg-danger">Advanced</span></p>
+                                        {% endif %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+    {%endblock%}
