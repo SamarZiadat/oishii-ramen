@@ -32,8 +32,8 @@
                                 <a href="{% url 'course_detail' course.slug %}" class="course-link">
                                     <h2 class="card-title hike-title">{{ course.title }}</h2>
                                     <p class="card-text">
-                                        Price: £ {{ course.price.normalize }} <br>
-                                        Duration: {{ course.duration.normalize }} hrs
+                                        Price: £ {{ course.price_in_gbp.normalize }} <br>
+                                        Duration: {{ course.duration_in_hrs.normalize }} hrs
                                     </p>
                                 </a>
                                 <a href="{% url 'course_detail' course.slug %}" class="post-link">
