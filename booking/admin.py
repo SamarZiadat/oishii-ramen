@@ -9,7 +9,7 @@ class CourseAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'skill_level')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
-    list_filter = ('skill_level', 'duration', 'price')
+    list_filter = ('skill_level', 'duration_in_hrs', 'price_in_gbp')
     summernote_fields = ('content')
     actions = ['publish_course']
 

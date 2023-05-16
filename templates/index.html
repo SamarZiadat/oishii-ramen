@@ -29,11 +29,11 @@
                                 <img class="card-img-top" src=" {{ course.featured_image.url }}">
                                 {% endif %}
 
-                                <a href="{% url 'course_detail' course.slug %}" class="hike-link">
-                                    <h2 class="card-title hike-title">{{ hike.title }}</h2>
+                                <a href="{% url 'course_detail' course.slug %}" class="course-link">
+                                    <h2 class="card-title hike-title">{{ course.title }}</h2>
                                     <p class="card-text">
-                                        Distance: {{ hike.distance_km.normalize }} kms<br>
-                                        Estimated Duration: {{ hike.est_duration_hrs.normalize }} hrs
+                                        Price: £ {{ course.price.normalize }} <br>
+                                        Duration: {{ course.duration.normalize }} hrs
                                     </p>
                                 </a>
                                 <a href="{% url 'course_detail' course.slug %}" class="post-link">
