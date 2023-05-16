@@ -9,7 +9,7 @@ class CourseAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'skill_level')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
-    list_filter = ('skill_level', 'title')
+    list_filter = ('skill_level', 'duration', 'price')
     summernote_fields = ('content')
     actions = ['publish_course']
 
@@ -30,7 +30,7 @@ class ReviewAdmin(SummernoteModelAdmin):
 
 @admin.register(Timetable)
 class TimetableAdmin(admin.ModelAdmin):
-    list_display = ('course', 'starts', 'ends')
+    list_display = ('course', 'starts')
     list_filter = ('course', 'starts')
     search_fields = ('course__title', 'starts')
 

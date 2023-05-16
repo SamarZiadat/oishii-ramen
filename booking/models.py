@@ -12,6 +12,8 @@ class Course(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
+    duration = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
@@ -45,7 +47,6 @@ class Timetable(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
                                related_name='timetabled_course')
     starts = models.DateTimeField()
-    ends = models.DateTimeField()
 
     class Meta:
         ordering = ['starts']
