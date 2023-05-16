@@ -20,5 +20,5 @@ from home.views import get_home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('', get_home, name='get_home'),
+    path('', include('booking.urls'), name='booking_urls'),
 ]
