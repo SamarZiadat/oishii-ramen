@@ -29,46 +29,45 @@
                                 <img class="card-img-top" src=" {{ course.featured_image.url }}">
                                 {% endif %}
 
-                                <a href="{% url 'course_detail' course.slug %}" class="course-link">
-                                    <h2 class="card-title hike-title">{{ course.title }}</h2>
-                                    <p class="card-text">
-                                        Price: £ {{ course.price_in_gbp.normalize }} <br>
-                                        Duration: {{ course.duration_in_hrs.normalize }} hrs
-                                    </p>
-                                </a>
-                                <a href="{% url 'course_detail' course.slug %}" class="post-link">
-                                    <h3 class="card-title">{{ course.title }}</h2>
+                                <a href="#" class="course-link">
+                                    <h2 class="card-title course-title">{{ course.title }}
                                         {% if course.skill_level == 0 %}
-                                        <p><span class="badge text-bg-primary">Beginner</span></p>
+                                        <span class="badge text-bg-primary">Beginner</span>
                                         {% elif course.skill_level == 1 %}
-                                        <p><span class="badge text-bg-warning">Intermediate</span></p>
+                                        <span class="badge text-bg-warning">Intermediate</span>
                                         {% elif course.skill_level == 2 %}
-                                        <p><span class="badge text-bg-danger">Advanced</span></p>
+                                        <span class="badge text-bg-danger">Advanced</span>
                                         {% endif %}
+                                    </h2>
                                 </a>
+                                <p class="card-text">
+                                    Price: £{{ course.price_in_gbp.normalize }} <br>
+                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
+                                </p>
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
     </div>
-    {%endblock%}
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{%endblock%}
