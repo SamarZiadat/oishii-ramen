@@ -73,6 +73,10 @@ a:hover {
     border: none;
 }
 
+.text-bg-primary {
+    background-color: green!important;
+}
+
 /* Nav Bar */
 
 .nav-link {

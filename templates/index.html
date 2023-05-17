@@ -32,11 +32,11 @@
                                     <h2 class="card-title course-title">{{ course.title }}</h2>
                                 </a>
                                 {% if course.skill_level == 0 %}
-                                <h3><span class="badge text-bg-primary">Beginner</span></h3>
+                                <h2><span class="badge text-bg-primary">Beginner</span></h2>
                                 {% elif course.skill_level == 1 %}
-                                <h3><span class="badge text-bg-warning">Intermediate</span></h3>
+                                <h2><span class="badge text-bg-warning">Intermediate</span></h2>
                                 {% elif course.skill_level == 2 %}
-                                <h3><span class="badge text-bg-danger">Advanced</span></h3>
+                                <h2><span class="badge text-bg-danger">Advanced</span></h2>
                                 {% endif %}
                                 <p class="card-text">
                                     Price: £{{ course.price_in_gbp.normalize }} <br>
