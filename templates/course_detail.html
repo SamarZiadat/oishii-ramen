@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Course title goes in these h1 tags -->
+                <h1 class="course-title">{{ course.title }}</h1>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in course.featured_image.url %}
+                <img src=" {% static 'images/placeholder.webp' %} " width="100%">
+                {% else %}
+                <img src=" {{ course.featured_image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text ">
+                    {{ course.content | safe }}
+                </p>
+                <div class="row">
+                    <div class="col-1">
+                        {% with rows.count as total_reviews %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            <!-- Our total_reviews variable goes before the closing strong tag -->
+                            {{ total_reviews }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Reviews:</h3>
+            <div class="card-body">
+                <!-- For loop inside the empty control tags to iterate through each review in reviews -->
+                {% for review in reviews %}
+                <div class="reviews" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        <!-- The reviewer's name goes here. -->
+                        {{ review.name }}
+                        <span class=" text-muted font-weight-normal">
+                            <!-- The review's created date goes here -->
+                            {{ review.created_on }}
+                        </span> wrote:
+                    </p>
+                    <!-- The body of the comment goes before the | -->
+                    {{ review.body | linebreaks }}
+                </div>
+                <!-- For loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- For later -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
