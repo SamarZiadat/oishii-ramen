@@ -22,24 +22,22 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in course.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/cloudebr/image/upload/v1632744141/static/media/images/default_hike_pic_ni7pzb.jpg"
+                                <img class="card-img-top" src=" {% static 'images/placeholder.webp' %} "
                                     alt="Default course image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ course.featured_image.url }}">
                                 {% endif %}
 
                                 <a href="#" class="course-link">
-                                    <h2 class="card-title course-title">{{ course.title }}
-                                        {% if course.skill_level == 0 %}
-                                        <span class="badge text-bg-primary">Beginner</span>
-                                        {% elif course.skill_level == 1 %}
-                                        <span class="badge text-bg-warning">Intermediate</span>
-                                        {% elif course.skill_level == 2 %}
-                                        <span class="badge text-bg-danger">Advanced</span>
-                                        {% endif %}
-                                    </h2>
+                                    <h2 class="card-title course-title">{{ course.title }}</h2>
                                 </a>
+                                {% if course.skill_level == 0 %}
+                                <h3><span class="badge text-bg-primary">Beginner</span></h3>
+                                {% elif course.skill_level == 1 %}
+                                <h3><span class="badge text-bg-warning">Intermediate</span></h3>
+                                {% elif course.skill_level == 2 %}
+                                <h3><span class="badge text-bg-danger">Advanced</span></h3>
+                                {% endif %}
                                 <p class="card-text">
                                     Price: £{{ course.price_in_gbp.normalize }} <br>
                                     Duration: {{ course.duration_in_hrs.normalize }} hrs
