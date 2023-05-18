@@ -27,7 +27,7 @@ class Course(models.Model):
 
 class Review(models.Model):
 
-    username = models.ForeignKey(User, on_delete=models.CASCADE,
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_reviews")
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
                                related_name='reviews')
@@ -39,7 +39,7 @@ class Review(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f'Review {self.message} by {self.username}'
+        return f'Review {self.written_review} by {self.user}'
 
 
 class Timetable(models.Model):
@@ -63,10 +63,10 @@ class Timetable(models.Model):
 class Booking(models.Model):
     course = models.ForeignKey(Timetable, on_delete=models.CASCADE,
                                related_name='course_bookings')
-    username = models.ForeignKey(User, on_delete=models.CASCADE,
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
                                  related_name="user_bookings")
     places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
     approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.username} has booked onto {self.course}'
+        return f'{self.user} has booked onto {self.course}'

@@ -60,14 +60,14 @@
                 <div class="reviews" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The reviewer's name goes here. -->
-                        {{ review.name }}
+                        {{ review.user }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The review's created date goes here -->
                             {{ review.created_on }}
                         </span> wrote:
                     </p>
-                    <!-- The body of the comment goes before the | -->
-                    {{ review.body | linebreaks }}
+                    <!-- The written review of the review goes before the | -->
+                    {{ review.written_review | linebreaks }}
                 </div>
                 <!-- For loop ends here -->
                 {% endfor %}
@@ -83,7 +83,7 @@
                 {% if user.is_authenticated %}
 
                 <h3>Leave a review:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <p>Posting as: {{ user.user }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ review_form | crispy }}
                     {% csrf_token %}

@@ -19,9 +19,9 @@ class CourseAdmin(SummernoteModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
-    list_display = ('written_review', 'course', 'username', 'created_on', 'approved')
+    list_display = ('written_review', 'course', 'user', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
-    search_fields = ('username', 'written_review')
+    search_fields = ('user', 'written_review')
     actions = ['approve_reviews']
 
     def approve_reviews(self, request, queryset):
@@ -37,9 +37,9 @@ class TimetableAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('course', 'username', 'places_reserved', 'approved')
-    list_filter = ('course', 'username__username', 'approved')
-    search_fields = ('course__course__title', 'username__username')
+    list_display = ('course', 'user', 'places_reserved', 'approved')
+    list_filter = ('course', 'approved')
+    search_fields = ('course__course__title', 'user__user')
     actions = ['approve_bookings']
 
     def approve_bookings(self, request, queryset):

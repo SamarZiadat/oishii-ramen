@@ -40,7 +40,7 @@ class CourseDetail(View):
         review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             review_form.instance.email = request.user.email
-            review_form.instance.name = request.user.username
+            review_form.instance.user = request.user
             review = review_form.save(commit=False)
             review.course = course
             review.save()
