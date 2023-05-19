@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row booking-title">
+        <h3>Your Upcoming Courses</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col card mb-4  mt-3 left top">
+            <div class="card-body">
+                <!-- display each of the upcoming (future) bookings for this user -->
+                {% for booking in bookings %}
+                <div class="booking-details booking-card">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
+                                <div class="col-auto">
+                                    {% if "placeholder" in booking.course.course.featured_image.url %}
+                                    <img src=" {% static 'images/placeholder.webp' %} " alt="Default course image">
+                                    {% else %}
+                                    <img src="{{ booking.course.course.featured_image.url }} " alt="Course image">
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col booking-summary">
+                            <div class="row">
+                                <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
+                                    <h4>{{ booking.course.course }}</h4>
+                                </a>
+                                <p>
+                                    Start time: {{ booking.course.starts }}<br>
+                                    Price: £{{ course.price_in_gbp.normalize }}<br>
+                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
+                                </p>
+                            </div>
+                            <div class="row booking-icons">
+                                <div class="col-auto">
+                                    {% if booking.places_reserved == 1 %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-user"></i>
+                                        {{ booking.places_reserved }}</p>
+                                    {% else %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-user"></i>
+                                        {{ booking.places_reserved }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if booking.approved %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
+                                        Confirmed</p>
+                                    {% else %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-question-circle"></i>
+                                        Awaiting Confirmation</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <form action="{% url 'course_mybookings' %}" method="POST">
+                                {% csrf_token %}
+                                <!-- ask the user to confirm when about to delete a booking -->
+                                <button type="submit" class="btn btn-block btn-form mb-1" value="{{booking.id}}"
+                                    name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
+                                    Booking</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                You currently have no booking requests
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row booking-title">
+        <h3>Past bookings</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col card mb-4  mt-3 left top">
+            <div class="card-body">
+                <!-- display each of the past bookings for this user - these cannot be deleted -->
+                {% for booking in past_bookings %}
+                <div class="booking-details booking-card">
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
+                                <div class="col-auto">
+                                    {% if "placeholder" in booking.course.course.featured_image.url %}
+                                    <img src=" {% static 'images/placeholder.webp' %} " alt="Default course image">
+                                    {% else %}
+                                    <img src="{{ booking.course.course.featured_image.url }} " alt="Course image">
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col booking-summary">
+                            <div class="row">
+                                <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
+                                    <h4>{{ booking.course.course }}</h4>
+                                </a>
+                                <p>
+                                    Start time: {{ booking.course.starts }}<br>
+                                    Price: £{{ course.price_in_gbp.normalize }}<br>
+                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
+                                </p>
+                            </div>
+                            <div class="row booking-icons">
+                                <div class="col-auto">
+                                    {% if booking.places_reserved == 1 %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-user"></i>
+                                        {{ booking.places_reserved }}</p>
+                                    {% else %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-user"></i>
+                                        {{ booking.places_reserved }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="col">
+                                    {% if booking.approved %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
+                                        Confirmed</p>
+                                    {% else %}
+                                    <p class="card-text text-muted h6"><i class="fas fa-question-circle"></i>
+                                        Awaiting Confirmation</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                You have no past booking requests
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -20,7 +20,36 @@
                 {% else %}
                 <img src=" {{ course.featured_image.url }}" width="100%">
                 {% endif %}
+
+                <!-- only logged in users should see the booking panel -->
+                {% if user.is_authenticated %}
+                <div class="course-subitem booking-panel">
+                    <form action="{% url 'course_book'  %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <!-- use drop-down controls so only valid values can be picked -->
+                            <label class="form-label" for="scheduleFormControlSelect">Timetabled Courses</label>
+                            <select class="form-select" id="scheduleFormControlSelect" name="timetable_id">
+                                {% for course in timetabled_courses %}
+                                <option value={{ course.id }}>{{ course.starts }}</option>
+                                {% endfor %}
+                            </select><br>
+                            <label class="form-label" for="CoursesFormControlSelect">Number of students</label>
+                            <select class="form-select student-select" id="StudentsFormControlSelect"
+                                name="places_reserved">
+                                {% for x in "12345"|make_list %}
+                                <option>{{ x }}</option>
+                                {% endfor %}
+                            </select>
+                            <!-- disable the booking button if no upcoming courses are scheduled for this course -->
+                            <button type="submit" class="btn btn-block btn-form btn-book"
+                                {% if scheduled_courses|length == 0 %} disabled {% endif %}>Book</button>
+                        </div>
+                    </form>
+                </div>
+                {% endif %}
             </div>
+
         </div>
     </div>
 </div>
@@ -29,7 +58,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
+                <!-- The course content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
                     {{ course.content | safe }}

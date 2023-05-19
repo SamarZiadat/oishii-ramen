@@ -56,8 +56,7 @@ class Timetable(models.Model):
         ]
 
     def __str__(self):
-        return f'Course {self.course} takes place in the {self.location} on \
-            {self.date} from {self.starts} to {self.ends}'
+        return f'Course {self.course} takes place on {self.starts}'
 
 
 class Booking(models.Model):
