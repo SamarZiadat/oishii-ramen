@@ -30,7 +30,7 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name="user_reviews")
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
-                             related_name='reviews')
+                               related_name='reviews')
     written_review = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -64,7 +64,7 @@ class Booking(models.Model):
     course = models.ForeignKey(Timetable, on_delete=models.CASCADE,
                                related_name='course_bookings')
     user = models.ForeignKey(User, on_delete=models.CASCADE,
-                                related_name="user_bookings")
+                             related_name="user_bookings")
     places_reserved = models.IntegerField(validators=[MinValueValidator(1), ])
     approved = models.BooleanField(default=False)
 
