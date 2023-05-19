@@ -19,7 +19,8 @@ class CourseAdmin(SummernoteModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
-    list_display = ('written_review', 'course', 'user', 'created_on', 'approved')
+    list_display = (
+        'written_review', 'course', 'user', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('user', 'written_review')
     actions = ['approve_reviews']
