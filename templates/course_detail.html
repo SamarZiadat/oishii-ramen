@@ -24,13 +24,13 @@
                 <!-- only logged in users should see the booking panel -->
                 {% if user.is_authenticated %}
                 <div class="course-subitem booking-panel">
-                    <form action="{% url 'course_book'  %}" method="POST">
+                    <form action="{% url 'course_book' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <!-- use drop-down controls so only valid values can be picked -->
-                            <label class="form-label" for="scheduleFormControlSelect">Timetabled Courses</label>
-                            <select class="form-select" id="scheduleFormControlSelect" name="timetable_id">
-                                {% for course in timetabled_courses %}
+                            <label class="form-label" for="TimetableFormControlSelect">Timetabled Courses</label>
+                            <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
+                                {% for course in timetabled_course %}
                                 <option value={{ course.id }}>{{ course.starts }}</option>
                                 {% endfor %}
                             </select><br>

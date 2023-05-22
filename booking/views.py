@@ -111,7 +111,7 @@ class CourseMyBookings(View):
 
 class CourseBook(View):
     """
-    Book course displayed on course cetail page
+    Book course displayed on course detail page
 
     post method : check input, create new booking for current user
                   for selected timetabled course then redirect to
@@ -125,7 +125,7 @@ class CourseBook(View):
         # validate number of places reserved
         if places_reserved in ['1', '2', '3', '4', '5']:
             timetable_id = request.POST.get('timetable_id')
-            timetabled_courses = get_object_or_404(Timetable, id=timetable_id)
+            timetabled_course = get_object_or_404(Timetable, id=timetable_id)
             Booking.objects.create(course=timetabled_course, user=user,
                                    places_reserved=places_reserved)
             messages.success(request, 'Thank you for your booking request!')
