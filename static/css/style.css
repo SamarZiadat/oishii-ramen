@@ -45,8 +45,7 @@ a:hover {
 /* Content Containers */
 
 .content-container {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: 4em 0em;
 }
 
 /* Index */
@@ -76,6 +75,10 @@ a:hover {
     background-color: green !important;
 }
 
+/* Login Page */
+
+.openid_login {}
+
 /* Error Pages */
 
 .fa-triangle-exclamation {
@@ -92,6 +95,22 @@ a:hover {
 
 .nav-link:hover {
     color: #F0A202;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 0;
+}
+
+.navbar {
+    padding: 1em 3em;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 /* Footer */
