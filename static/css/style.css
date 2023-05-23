@@ -9,7 +9,6 @@
 
 body {
     font-family: Cantarell, sans-serif;
-    font-size: 100%;
     color: #100B00;
     max-width: 2000px;
     margin-right: auto;
@@ -74,7 +73,13 @@ a:hover {
 }
 
 .text-bg-primary {
-    background-color: green!important;
+    background-color: green !important;
+}
+
+/* Error Pages */
+
+.fa-triangle-exclamation {
+    font-size: 20em;
 }
 
 /* Nav Bar */

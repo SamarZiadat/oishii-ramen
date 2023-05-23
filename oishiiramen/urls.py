@@ -23,7 +23,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
 ]
 
-handler404 = 'w_shop.views.handler404'
-handler500 = 'w_shop.views.handler500'
-handler403 = 'w_shop.views.handler403'
-handler405 = 'w_shop.views.handler405'
+handler404 = 'oishiiramen.views.handler404'
+handler500 = 'oishiiramen.views.handler500'
+handler403 = 'oishiiramen.views.handler403'
+handler405 = 'oishiiramen.views.handler405'
