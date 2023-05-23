@@ -32,6 +32,8 @@ class CourseDetail(View):
         course = get_object_or_404(queryset, slug=slug)
         reviews = course.reviews.filter(approved=True).order_by("-created_on")
 
+        raise Exception("test")
+
         return render(
             request,
             "course_detail.html",
