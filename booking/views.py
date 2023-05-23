@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.urls import reverse
 from .models import Course, Booking, Timetable
 from .forms import ReviewForm
 import datetime
@@ -125,8 +126,8 @@ class CourseBook(View):
         # validate number of places reserved
         if places_reserved in ['1', '2', '3', '4', '5']:
             timetable_id = request.POST.get('timetable_id')
-            timetabled_course = get_object_or_404(Timetable, id=timetable_id)
-            Booking.objects.create(course=timetabled_course, user=user,
+            timeslot = get_object_or_404(Timetable, id=timetable_id)
+            Booking.objects.create(course=timeslot, user=user,
                                    places_reserved=places_reserved)
             messages.success(request, 'Thank you for your booking request!')
             # Used HttpResponseRedirect here instead of render to ensure

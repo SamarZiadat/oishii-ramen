@@ -45,7 +45,7 @@ class Review(models.Model):
 class Timetable(models.Model):
 
     course = models.ForeignKey(Course, on_delete=models.CASCADE,
-                               related_name='timetabled_course')
+                               related_name='timeslots')
     starts = models.DateTimeField()
 
     class Meta:

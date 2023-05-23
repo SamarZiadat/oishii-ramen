@@ -36,8 +36,8 @@
                     <!-- use drop-down controls so only valid values can be picked -->
                     <label class="form-label" for="TimetableFormControlSelect">Date and Time</label>
                     <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
-                        {% for course in timetabled_course %}
-                        <option value={{ course.id }}>{{ course.starts }}</option>
+                        {% for timeslot in course.timeslots.all %}
+                        <option value="{{ timeslot.id }}">{{ timeslot.starts }}</option>
                         {% endfor %}
                     </select><br>
                     <label class="form-label" for="StudentsFormControlSelect">Number places to reserve:</label>
@@ -47,8 +47,8 @@
                         {% endfor %}
                     </select>
                     <!-- disable the booking button if no upcoming courses are scheduled for this course -->
-                    <button type="submit" class="btn btn-block btn-form btn-book" {% if scheduled_courses|length == 0 %}
-                        disabled {% endif %}>Book</button>
+                    <button type="submit" class="btn btn-block btn-form btn-book"
+                        {% if course.timeslots.all.count == 0 %} disabled {% endif %}>Book</button>
                 </div>
             </form>
             {% endif %}
