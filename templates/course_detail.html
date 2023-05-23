@@ -6,71 +6,61 @@
 
 {% load crispy_forms_tags %}
 
-<div class="container content-container">
 
-    <div class="col-md-6">
-        <!-- Course title goes in these h1 tags -->
-        <h1 class="course-title">Course: {{ course.title }}</h1>
-    </div>
+<div class="course-image d-none d-sm-block">
+    <!-- The featured image URL goes in the src attribute -->
+    {% if "placeholder" in course.featured_image.url %}
+    <img src=" {% static 'images/placeholder.webp' %} " width="100%">
+    {% else %}
+    <img src=" {{ course.featured_image.url }}" width="100%">
+    {% endif %}
+</div>
+
+<div class="content-container">
 
     <div class="row">
-        <div class="course-content col-md-6">
+        <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
+        <div class="course-content col-8">
             <!-- The course content goes inside the course-content-text. -->
             <!-- Use the | safe filter inside the template tags -->
             <p class="course-content-text ">
                 {{ course.content | safe }}
             </p>
+            <!-- only logged in users should see the booking panel -->
+            {% if user.is_authenticated %}
         </div>
-        <div class="course-image col-6 d-none d-sm-block">
-            <!-- The featured image URL goes in the src attribute -->
-            {% if "placeholder" in course.featured_image.url %}
-            <img src=" {% static 'images/placeholder.webp' %} " width="100%">
-            {% else %}
-            <img src=" {{ course.featured_image.url }}" width="100%">
+        <div class="booking-panel col-4">
+            <form action="{% url 'course_book' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <!-- use drop-down controls so only valid values can be picked -->
+                    <label class="form-label" for="TimetableFormControlSelect">Date and Time</label>
+                    <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
+                        {% for course in timetabled_course %}
+                        <option value={{ course.id }}>{{ course.starts }}</option>
+                        {% endfor %}
+                    </select><br>
+                    <label class="form-label" for="StudentsFormControlSelect">Number places to reserve:</label>
+                    <select class="form-select student-select" id="StudentsFormControlSelect" name="places_reserved">
+                        {% for x in "12345"|make_list %}
+                        <option>{{ x }}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- disable the booking button if no upcoming courses are scheduled for this course -->
+                    <button type="submit" class="btn btn-block btn-form btn-book" {% if scheduled_courses|length == 0 %}
+                        disabled {% endif %}>Book</button>
+                </div>
+            </form>
             {% endif %}
         </div>
     </div>
 
-    <!-- only logged in users should see the booking panel -->
-    {% if user.is_authenticated %}
-    <div class="booking-panel container content-container">
-        <h2>Book:</h2>
-        <form action="{% url 'course_book' %}" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <!-- use drop-down controls so only valid values can be picked -->
-                <label class="form-label" for="TimetableFormControlSelect">Date and Time</label>
-                <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
-                    {% for course in timetabled_course %}
-                    <option value={{ course.id }}>{{ course.starts }}</option>
-                    {% endfor %}
-                </select><br>
-                <label class="form-label" for="StudentsFormControlSelect">Number places to reserve:</label>
-                <select class="form-select student-select" id="StudentsFormControlSelect" name="places_reserved">
-                    {% for x in "12345"|make_list %}
-                    <option>{{ x }}</option>
-                    {% endfor %}
-                </select>
-                <!-- disable the booking button if no upcoming courses are scheduled for this course -->
-                <button type="submit" class="btn btn-block btn-form btn-book" {% if scheduled_courses|length == 0 %}
-                    disabled {% endif %}>Book</button>
-            </div>
-        </form>
-        {% endif %}
-    </div>
 
 </div>
 
-<div class="container content-container">
-    <div class="row">
-        <div class="col-1">
-            {% with rows.count as total_reviews %}
-            <strong class="text-secondary"><i class="far fa-comments"></i>
-                <!-- Our total_reviews variable goes before the closing strong tag -->
-                {{ total_reviews }}</strong>
-            {% endwith %}
-        </div>
-    </div>
+<div class="content-container">
+    <br>
+    <h3><i class="far fa-comments"></i> Reviews:</h3>
     <div class="row">
         <div class="col">
             <hr>
@@ -78,7 +68,6 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Reviews:</h3>
             <div class="card-body">
                 <!-- For loop inside the empty control tags to iterate through each review in reviews -->
                 {% for review in reviews %}
