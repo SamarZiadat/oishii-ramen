@@ -11,8 +11,6 @@ body {
     font-family: Cantarell, sans-serif;
     color: #100B00;
     max-width: 2000px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 h1 {
@@ -22,7 +20,6 @@ h1 {
 h2 {
     font-size: 1.25em;
     color: #C80000;
-    text-transform: uppercase;
 }
 
 h3 {
@@ -45,12 +42,12 @@ a:hover {
 /* Content Containers */
 
 .content-container {
-    padding-top: 4em 0em;
+    padding-top: 4em;
 }
 
 /* Index */
 
-.home-heading {
+.page-heading {
     text-align: center;
     color: #F0A202;
     text-transform: uppercase;
@@ -75,10 +72,6 @@ a:hover {
     background-color: green !important;
 }
 
-/* Login Page */
-
-.openid_login {}
-
 /* Error Pages */
 
 .fa-triangle-exclamation {
@@ -102,7 +95,7 @@ a:hover {
 }
 
 .navbar {
-    padding: 1em 3em;
+    padding: 1em 3.5em;
 }
 
 .navbar-toggler {
@@ -117,6 +110,7 @@ a:hover {
 
 .footer-h2 {
     padding-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .footer-contact,

@@ -10,62 +10,59 @@
 </section>
 <!-- /.hero -->
 
-<div class="container content-container container-fluid">
+<div class="container content-container">
+    <h1 class="page-heading">Courses</h1>
+    <!-- Course Summaries Column -->
     <div class="row">
-        <h1 class="home-heading">Courses</h1>
-        <!-- Course Summaries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for course in course_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in course.featured_image.url %}
-                                <img class="card-img-top" src=" {% static 'images/placeholder.webp' %} "
-                                    alt="Default course image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ course.featured_image.url }}">
-                                {% endif %}
+        {% for course in course_list %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in course.featured_image.url %}
+                        <img class="card-img-top" src=" {% static 'images/placeholder.webp' %} "
+                            alt="Default course image">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ course.featured_image.url }}">
+                        {% endif %}
 
-                                <a href="{% url 'course_detail' course.slug  %}" class="course-link">
-                                    <h2 class="card-title course-title">{{ course.title }}</h2>
-                                </a>
-                                {% if course.skill_level == 0 %}
-                                <h2><span class="badge text-bg-primary">Beginner</span></h2>
-                                {% elif course.skill_level == 1 %}
-                                <h2><span class="badge text-bg-warning">Intermediate</span></h2>
-                                {% elif course.skill_level == 2 %}
-                                <h2><span class="badge text-bg-danger">Advanced</span></h2>
-                                {% endif %}
-                                <p class="card-text">
-                                    Price: £{{ course.price_in_gbp.normalize }} <br>
-                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
-                                </p>
-                            </div>
-                        </div>
+                        <a href="{% url 'course_detail' course.slug  %}" class="course-link">
+                            <h2 class="card-title course-title">{{ course.title }}</h2>
+                        </a>
+                        {% if course.skill_level == 0 %}
+                        <h2><span class="badge text-bg-primary">Beginner</span></h2>
+                        {% elif course.skill_level == 1 %}
+                        <h2><span class="badge text-bg-warning">Intermediate</span></h2>
+                        {% elif course.skill_level == 2 %}
+                        <h2><span class="badge text-bg-danger">Advanced</span></h2>
+                        {% endif %}
+                        <p class="card-text">
+                            Price: £{{ course.price_in_gbp.normalize }} <br>
+                            Duration: {{ course.duration_in_hrs.normalize }} hrs
+                        </p>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
             </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 </div>
 {%endblock%}
