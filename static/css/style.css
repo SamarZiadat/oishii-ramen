@@ -162,7 +162,7 @@ a:hover {
 
 .footer-contact,
 .footer-address,
-.footer-times {
+.footer-socials {
     padding-top: 2em;
 }
 
@@ -181,7 +181,8 @@ on screens smaller than boostrap lg */
 @media only screen and (max-width: 992px) {
 
     .footer-contact,
-    .footer-address {
+    .footer-address,
+    .footer-socials {
         text-align: center;
     }
 }
