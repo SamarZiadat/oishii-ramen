@@ -2,21 +2,26 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="row booking-title">
-        <h3>Your Upcoming Courses</h3>
+<div class="content-container">
+    <div class="booking-title">
+        <h1 class="page-heading">Bookings Portal</h1>
+        <p>Hello {{ user }}, this is your bookings portal!
+            <br>From here you can view past and upcoming bookings, and amend or cancel any upcoming bookings.</p>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col card mb-4  mt-3 left top">
+    <div class="row page-header content-container">
+        <h3>Your Upcoming Courses</h3>
+        <hr>
+    </div>
+    <div class="row content-container">
+        <div class="col card">
             <div class="card-body">
                 <!-- display each of the upcoming (future) bookings for this user -->
                 {% for booking in bookings %}
                 <div class="booking-details booking-card">
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-md-12 booking-image">
                             <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
-                                <div class="col-auto">
+                                <div class="col-auto booking-image">
                                     {% if "placeholder" in booking.course.course.featured_image.url %}
                                     <img src=" {% static 'images/placeholder.webp' %} " alt="Default course image">
                                     {% else %}
@@ -61,8 +66,9 @@
                             <form action="{% url 'course_mybookings' %}" method="POST">
                                 {% csrf_token %}
                                 <!-- ask the user to confirm when about to delete a booking -->
-                                <button type="submit" class="btn btn-block btn-form mb-1" value="{{booking.id}}"
-                                    name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
+                                <button type="submit" class="btn btn-block btn-form button-styling"
+                                    value="{{booking.id}}" name="cancel_booking_id"
+                                    onclick="return confirm('Are you sure?')">Cancel
                                     Booking</button>
                             </form>
                         </div>
@@ -74,12 +80,12 @@
             </div>
         </div>
     </div>
-    <div class="row booking-title">
-        <h3>Past bookings</h3>
+    <div class="row page-header content-container">
+        <h3>Your Past Courses</h3>
+        <hr>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col card mb-4  mt-3 left top">
+    <div class="row content-container">
+        <div class="col card">
             <div class="card-body">
                 <!-- display each of the past bookings for this user - these cannot be deleted -->
                 {% for booking in past_bookings %}
@@ -87,7 +93,7 @@
                     <div class="row">
                         <div class="col-auto">
                             <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
-                                <div class="col-auto">
+                                <div class="col-auto booking-image">
                                     {% if "placeholder" in booking.course.course.featured_image.url %}
                                     <img src=" {% static 'images/placeholder.webp' %} " alt="Default course image">
                                     {% else %}

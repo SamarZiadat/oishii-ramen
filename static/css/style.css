@@ -39,6 +39,12 @@ a:hover {
     color: #F0A202;
 }
 
+.button-styling {
+    --bs-btn-color: white;
+    --bs-btn-bg: #C80000;
+    --bs-btn-border-radius: 3rem;
+}
+
 /* Content Containers */
 
 .content-container {
@@ -108,9 +114,43 @@ a:hover {
 
 /* Course Detail Page */
 
-.booking-panel {
+.course-detail-row {
+    justify-content: space-between;
+}
+
+.booking-panel-container {
     border-radius: 25px;
-    border: solid #F0A202;
+    box-shadow: 5px 5px 30px #D8D8D8;
+    height: fit-content;
+    width: max-content;
+    align-self: center;
+}
+
+.booking-panel {
+    padding: 2em;
+}
+
+.booking-form>button {
+    margin-top: 2em;
+    width: 6em;
+}
+
+.review-panel {
+    padding-top: 3em;
+}
+
+/* Bookings Portal */
+
+.booking-title {
+    text-align: center;
+}
+
+.booking-image>img {
+    width: 60%;
+}
+
+.booking-summary {
+    padding: 1em 1em 3em 1em;
 }
 
 /* Footer */
