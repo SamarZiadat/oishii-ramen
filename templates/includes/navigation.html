@@ -22,18 +22,27 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'course_mybookings' %}">My Bookings</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
                     </li>
                     {% endif %}
                 </ul>
+                {% if user.is_authenticated %}
+                <span class="navbar-text">
+                    <i class="far fa-user"></i> {{ user.user }}
+                </span>
+                {% endif %}
             </div>
+        </div>
         </div>
     </nav>
     <!-- /.nav -->
