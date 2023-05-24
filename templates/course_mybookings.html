@@ -9,10 +9,11 @@
             <br>From here you can view past and upcoming bookings, and amend or cancel any upcoming bookings.</p>
     </div>
     <div class="row page-header content-container">
-        <h3>Your Upcoming Courses</h3>
+        <h2>Your Upcoming Courses</h2>
         <hr>
     </div>
-    <div class="row content-container">
+
+    <div class="content-container">
         <div class="col card">
             <div class="card-body">
                 <!-- display each of the upcoming (future) bookings for this user -->
@@ -37,8 +38,8 @@
                                 </a>
                                 <p>
                                     Start time: {{ booking.course.starts }}<br>
-                                    Price: £{{ course.price_in_gbp.normalize }}<br>
-                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
+                                    Price: £{{ course.price_in_gbp}}<br>
+                                    Duration: {{ course.duration_in_hrs}} hrs
                                 </p>
                             </div>
                             <div class="row booking-icons">
@@ -79,8 +80,9 @@
             </div>
         </div>
     </div>
+
     <div class="row page-header content-container">
-        <h3>Your Past Courses</h3>
+        <h2>Your Past Courses</h2>
         <hr>
     </div>
     <div class="row content-container">
@@ -108,8 +110,8 @@
                                 </a>
                                 <p>
                                     Start time: {{ booking.course.starts }}<br>
-                                    Price: £{{ course.price_in_gbp.normalize }}<br>
-                                    Duration: {{ course.duration_in_hrs.normalize }} hrs
+                                    Price: £{{ course.price_in_gbp }}<br>
+                                    Duration: {{ course.duration_in_hrs }} hrs
                                 </p>
                             </div>
                             <div class="row booking-icons">
