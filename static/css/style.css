@@ -78,6 +78,20 @@ a:hover {
     background-color: green !important;
 }
 
+.pagination {
+    --bs-pagination-color: #100B00;
+    --bs-pagination-border-color: none;
+    --bs-pagination-hover-color: #F0A202;
+    --bs-pagination-hover-bg: none;
+    --bs-pagination-hover-border-color: none;
+    --bs-pagination-focus-color: none;
+    --bs-pagination-focus-bg: none;
+    --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-active-color: none;
+    --bs-pagination-active-bg: none;
+    --bs-pagination-active-border-color: none;
+}
+
 /* Error Pages */
 
 .fa-triangle-exclamation {
@@ -145,17 +159,27 @@ a:hover {
 
 .booking-title {
     text-align: center;
+    padding-bottom: 4em;
 }
 
 .booking-image>img {
-    width: 60%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .booking-summary {
     padding: 1em 1em 3em 1em;
 }
 
+.booking-details {
+    padding-bottom: 2em;
+}
+
 /* Footer */
+
+footer {
+    padding-top: 8em;
+}
 
 .footer-h2 {
     padding-bottom: 10px;

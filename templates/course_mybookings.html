@@ -14,13 +14,13 @@
     </div>
 
     <div class="content-container">
-        <div class="col card">
+        <div class="col card booking-card">
             <div class="card-body">
                 <!-- display each of the upcoming (future) bookings for this user -->
                 {% for booking in bookings %}
-                <div class="booking-details booking-card">
+                <div class="booking-details">
                     <div class="row">
-                        <div class="col-md-12 booking-image">
+                        <div class="col-lg-4 booking-image">
                             <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
                                 <div class="col-auto booking-image">
                                     {% if "placeholder" in booking.course.course.featured_image.url %}
@@ -31,7 +31,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col booking-summary">
+                        <div class="col booking-summary col-lg-8">
                             <div class="row">
                                 <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
                                     <h4>{{ booking.course.course }}</h4>
@@ -61,15 +61,15 @@
                                         Awaiting Confirmation</p>
                                     {% endif %}
                                 </div>
-                            </div>
-                            <div class="col-7 d-flex justify-content-end cancel-button">
-                                <form action="{% url 'course_mybookings' %}" method="POST">
-                                    {% csrf_token %}
-                                    <!-- ask the user to confirm when about to delete a booking -->
-                                    <button type="submit" class="btn btn-form button-styling" value="{{booking.id}}"
-                                        name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
-                                        Booking</button>
-                                </form>
+                                <div class="col cancel-button">
+                                    <form action="{% url 'course_mybookings' %}" method="POST">
+                                        {% csrf_token %}
+                                        <!-- ask the user to confirm when about to delete a booking -->
+                                        <button type="submit" class="btn btn-form button-styling" value="{{booking.id}}"
+                                            name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
+                                            Booking</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                 {% for booking in past_bookings %}
                 <div class="booking-details booking-card">
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-lg-4 booking-image">
                             <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
                                 <div class="col-auto booking-image">
                                     {% if "placeholder" in booking.course.course.featured_image.url %}
@@ -103,7 +103,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col booking-summary">
+                        <div class="col booking-summary col-lg-8">
                             <div class="row">
                                 <a href="{% url 'course_detail' booking.course.course.slug %}" class="course-link">
                                     <h4>{{ booking.course.course }}</h4>
