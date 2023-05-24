@@ -61,16 +61,15 @@
                                     {% endif %}
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-auto">
-                            <form action="{% url 'course_mybookings' %}" method="POST">
-                                {% csrf_token %}
-                                <!-- ask the user to confirm when about to delete a booking -->
-                                <button type="submit" class="btn btn-block btn-form button-styling"
-                                    value="{{booking.id}}" name="cancel_booking_id"
-                                    onclick="return confirm('Are you sure?')">Cancel
-                                    Booking</button>
-                            </form>
+                            <div class="col-7 d-flex justify-content-end cancel-button">
+                                <form action="{% url 'course_mybookings' %}" method="POST">
+                                    {% csrf_token %}
+                                    <!-- ask the user to confirm when about to delete a booking -->
+                                    <button type="submit" class="btn btn-form button-styling" value="{{booking.id}}"
+                                        name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
+                                        Booking</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

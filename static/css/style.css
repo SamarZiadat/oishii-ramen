@@ -124,6 +124,7 @@ a:hover {
     height: fit-content;
     width: max-content;
     align-self: center;
+    margin-top: 2em;
 }
 
 .booking-panel {
@@ -137,6 +138,7 @@ a:hover {
 
 .review-panel {
     padding-top: 3em;
+    align-self: center;
 }
 
 /* Bookings Portal */

@@ -16,69 +16,60 @@
     {% endif %}
 </div>
 
-<div class="content-container">
-
-    <div class="row content-container course-detail-row">
-        <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
-        <div class="course-content col-8">
-            {% if course.skill_level == 0 %}
-            <h2><span class="badge text-bg-primary">Beginner</span></h2>
-            {% elif course.skill_level == 1 %}
-            <h2><span class="badge text-bg-warning">Intermediate</span></h2>
-            {% elif course.skill_level == 2 %}
-            <h2><span class="badge text-bg-danger">Advanced</span></h2>
+<div class="row course-detail-row content-container">
+    <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
+    <div class="course-content col-12 col-lg-8">
+        {% if course.skill_level == 0 %}
+        <h2><span class="badge text-bg-primary">Beginner</span></h2>
+        {% elif course.skill_level == 1 %}
+        <h2><span class="badge text-bg-warning">Intermediate</span></h2>
+        {% elif course.skill_level == 2 %}
+        <h2><span class="badge text-bg-danger">Advanced</span></h2>
+        {% endif %}
+        <p class="card-text">
+            Price: £{{ course.price_in_gbp.normalize }} per person<br>
+            Course duration: {{ course.duration_in_hrs.normalize }} hrs
+        </p>
+        <!-- The course content goes inside the course-content-text. -->
+        <!-- Use the | safe filter inside the template tags -->
+        <p class="course-content-text ">
+            {{ course.content | safe }}
+        </p>
+        <!-- only logged in users should see the booking panel -->
+        {% if user.is_authenticated %}
+    </div>
+    <div class="booking-panel-container col-12 col-lg-4">
+        <div class="booking-panel">
+            <form action="{% url 'course_book' %}" method="POST">
+                {% csrf_token %}
+                <div class="booking-form form-group">
+                    <!-- use drop-down controls so only valid values can be picked -->
+                    <label class="form-label" for="TimetableFormControlSelect">Date and Time</label>
+                    <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
+                        {% for timeslot in course.timeslots.all %}
+                        <option value="{{ timeslot.id }}">{{ timeslot.starts }}</option>
+                        {% endfor %}
+                    </select><br>
+                    <label class="form-label" for="StudentsFormControlSelect">Number places to reserve:</label>
+                    <select class="form-select student-select" id="StudentsFormControlSelect" name="places_reserved">
+                        {% for x in "12345"|make_list %}
+                        <option>{{ x }}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- disable the booking button if no upcoming courses are scheduled for this course -->
+                    <button type="submit" class="btn btn-block btn-form button-styling"
+                        {% if course.timeslots.all.count == 0 %} disabled {% endif %}>Book</button>
+                </div>
+            </form>
             {% endif %}
-            <p class="card-text">
-                Price: £{{ course.price_in_gbp.normalize }} per person<br>
-                Course duration: {{ course.duration_in_hrs.normalize }} hrs
-            </p>
-            <!-- The course content goes inside the course-content-text. -->
-            <!-- Use the | safe filter inside the template tags -->
-            <p class="course-content-text ">
-                {{ course.content | safe }}
-            </p>
-            <!-- only logged in users should see the booking panel -->
-            {% if user.is_authenticated %}
-        </div>
-        <div class="booking-panel-container col-4">
-            <div class="booking-panel">
-                <form action="{% url 'course_book' %}" method="POST">
-                    {% csrf_token %}
-                    <div class="booking-form form-group">
-                        <!-- use drop-down controls so only valid values can be picked -->
-                        <label class="form-label" for="TimetableFormControlSelect">Date and Time</label>
-                        <select class="form-select" id="TimetableFormControlSelect" name="timetable_id">
-                            {% for timeslot in course.timeslots.all %}
-                            <option value="{{ timeslot.id }}">{{ timeslot.starts }}</option>
-                            {% endfor %}
-                        </select><br>
-                        <label class="form-label" for="StudentsFormControlSelect">Number places to reserve:</label>
-                        <select class="form-select student-select" id="StudentsFormControlSelect"
-                            name="places_reserved">
-                            {% for x in "12345"|make_list %}
-                            <option>{{ x }}</option>
-                            {% endfor %}
-                        </select>
-                        <!-- disable the booking button if no upcoming courses are scheduled for this course -->
-                        <button type="submit" class="btn btn-block btn-form button-styling"
-                            {% if course.timeslots.all.count == 0 %} disabled {% endif %}>Book</button>
-                    </div>
-                </form>
-                {% endif %}
-            </div>
         </div>
     </div>
-
-
 </div>
 
-<div class="content-container review-panel">
-    <br>
-    <h3><i class="far fa-comments"></i> Course Reviews:</h3>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
+<div class="review-panel content-container">
+    <div class="row review-panel-title">
+        <h3><i class="far fa-comments"></i> Course Reviews:</h3>
+        <hr>
     </div>
     <div class="row">
         <div class="col-md-8 card">
@@ -123,5 +114,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock content %}
