@@ -53,6 +53,20 @@ a:hover {
 
 /* Index */
 
+.hero {
+    background-image: url("https://res.cloudinary.com/dwopdkktn/image/upload/v1683816301/static/images/hero-image.7f80e8180155.webp");
+    background-size: 100vw;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.about {
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    width: 50vw;
+}
+
 .page-heading {
     text-align: center;
     color: #F0A202;
