@@ -43,7 +43,7 @@
                                 </p>
                             </div>
                             <div class="row booking-icons">
-                                <div class="col-auto">
+                                <div class="col-lg-auto">
                                     {% if booking.places_reserved == 1 %}
                                     <p class="card-text text-muted h6"><i class="fas fa-user"></i>
                                         {{ booking.places_reserved }}</p>
@@ -52,7 +52,7 @@
                                         {{ booking.places_reserved }}</p>
                                     {% endif %}
                                 </div>
-                                <div class="col">
+                                <div class="col-lg-auto">
                                     {% if booking.approved %}
                                     <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
                                         Confirmed</p>
@@ -61,13 +61,13 @@
                                         Awaiting Confirmation</p>
                                     {% endif %}
                                 </div>
-                                <div class="col cancel-button">
+                                <div class="col-12 mt-4 cancel-button">
                                     <form action="{% url 'course_mybookings' %}" method="POST">
                                         {% csrf_token %}
                                         <!-- ask the user to confirm when about to delete a booking -->
                                         <button type="submit" class="btn btn-form button-styling" value="{{booking.id}}"
                                             name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
-                                            Booking</button>
+                                        </button>
                                     </form>
                                 </div>
                             </div>

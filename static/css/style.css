@@ -234,4 +234,8 @@ on screens smaller than boostrap lg */
     .footer-socials {
         text-align: center;
     }
+
+    .about {
+        width: 80vw;
+    }
 }
