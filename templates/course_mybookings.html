@@ -4,9 +4,9 @@
 
 <div class="content-container">
     <div class="booking-title">
-        <h1 class="page-heading">Bookings Portal</h1>
-        <p>Hello {{ user }}, this is your bookings portal!
-            <br>From here you can view past and upcoming bookings, and amend or cancel any upcoming bookings.</p>
+        <h1 class="page-heading">Booking Portal</h1>
+        <p>Hello {{ user }}, welcome to your booking portal.</p>
+        <p>From here you can view past and upcoming bookings, and cancel any upcoming bookings.</p>
     </div>
     <div class="row page-header">
         <h2>Your Upcoming Courses</h2>
@@ -122,7 +122,7 @@
                                         {{ booking.places_reserved }}</p>
                                     {% endif %}
                                 </div>
-                                <div class="col">
+                                <div class="col-lg-auto">
                                     {% if booking.approved %}
                                     <p class="card-text text-muted h6"><i class="fas fa-check-circle"></i>
                                         Confirmed</p>
