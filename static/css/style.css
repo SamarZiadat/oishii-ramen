@@ -176,8 +176,10 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 2em;
-    background-image: url("");
+    padding: 15em 0;
+    background-image: url("https://res.cloudinary.com/dwopdkktn/image/upload/v1685113776/static/images/auth-background.a21637036f07.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Bookings Portal */
