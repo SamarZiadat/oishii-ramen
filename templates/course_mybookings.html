@@ -37,8 +37,8 @@
                             </a>
                             <p>
                                 Start time: {{ booking.course.starts }}<br>
-                                Price: £{{ course.price_in_gbp}}<br>
-                                Duration: {{ course.duration_in_hrs}} hrs
+                                Price: £{{ booking.course.course.price_in_gbp}}<br>
+                                Duration: {{ booking.course.course.duration_in_hrs}} hrs
                             </p>
                         </div>
                         <div class="row booking-icons">
@@ -108,8 +108,8 @@
                                 </a>
                                 <p>
                                     Start time: {{ booking.course.starts }}<br>
-                                    Price: £{{ course.price_in_gbp }}<br>
-                                    Duration: {{ course.duration_in_hrs }} hrs
+                                    Price: £{{ booking.course.course.price_in_gbp}}<br>
+                                    Duration: {{ booking.course.course.duration_in_hrs}} hrs
                                 </p>
                             </div>
                             <div class="row booking-icons">

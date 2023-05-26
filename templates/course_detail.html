@@ -102,7 +102,7 @@
                 {% if user.is_authenticated %}
 
                 <h3>Leave a review:</h3>
-                <p>Posting as: {{ user.user }}</p>
+                <p>Posting as: {{ user }}</p>
                 <form method="post">
                     {{ review_form | crispy }}
                     {% csrf_token %}

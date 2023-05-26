@@ -83,6 +83,7 @@ a:hover {
     width: 100%;
     height: 15vw;
     object-fit: cover;
+    border-radius: 25px;
 }
 
 .card-title {
@@ -144,7 +145,7 @@ a:hover {
 /* Course Detail Page */
 
 .course-detail-row {
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .booking-panel-container {
@@ -167,7 +168,6 @@ a:hover {
 
 .review-panel {
     padding-top: 3em;
-    align-self: center;
 }
 
 /* Log in / Log out / Sign Up */
@@ -189,6 +189,7 @@ a:hover {
 .booking-image>img {
     width: 100%;
     object-fit: cover;
+    border-radius: 25px;
 }
 
 .booking-summary {
