@@ -210,9 +210,7 @@ footer {
     text-transform: uppercase;
 }
 
-.footer-contact,
-.footer-address,
-.footer-socials {
+.footer-row>div {
     padding-top: 2em;
 }
 
@@ -225,16 +223,16 @@ footer {
     font-size: 0.8em;
 }
 
+.footer-logo {
+    text-align: center;
+}
+
 /* Media Query - centres footer text 
 on screens smaller than boostrap lg */
 
 @media only screen and (max-width: 992px) {
 
-    .footer-contact,
-    .footer-address,
-    .footer-socials {
-        text-align: center;
-    }
+    /* Index */
 
     .about {
         width: 80vw;
@@ -242,5 +240,11 @@ on screens smaller than boostrap lg */
 
     .card-img-top {
         height: 100%;
+    }
+
+    /* Footer */
+
+    .footer-row>div {
+        text-align: center;
     }
 }
