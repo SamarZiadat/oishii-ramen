@@ -13,7 +13,7 @@ class Course(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
     duration_in_hrs = models.DecimalField(max_digits=4, decimal_places=2)
-    price_in_gbp = models.DecimalField(max_digits=4, decimal_places=2)
+    price_in_gbp = models.DecimalField(max_digits=5, decimal_places=2)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
