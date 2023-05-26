@@ -177,6 +177,7 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 2em;
+    background-image: url("");
 }
 
 /* Bookings Portal */
