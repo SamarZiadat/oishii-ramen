@@ -43,6 +43,13 @@ a:hover {
     color: #F0A202;
 }
 
+.page-heading {
+    text-align: center;
+    color: #F0A202;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
 .button-styling {
     --bs-btn-color: white;
     --bs-btn-bg: #C80000;
@@ -72,11 +79,8 @@ a:hover {
     width: 50vw;
 }
 
-.page-heading {
-    text-align: center;
-    color: #F0A202;
-    text-transform: uppercase;
-    padding: 1em;
+.course-summaries {
+    padding-top: 2em;
 }
 
 .card-img-top {
@@ -99,9 +103,9 @@ a:hover {
 }
 
 .pagination {
-    --bs-pagination-color: #100B00;
+    --bs-pagination-color: #C80000;
     --bs-pagination-border-color: none;
-    --bs-pagination-hover-color: #F0A202;
+    --bs-pagination-hover-color: #100B00;
     --bs-pagination-hover-bg: none;
     --bs-pagination-hover-border-color: none;
     --bs-pagination-focus-color: none;
@@ -176,10 +180,16 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 15em 0;
-    background-image: url("https://res.cloudinary.com/dwopdkktn/image/upload/v1685113776/static/images/auth-background.a21637036f07.webp");
+    padding: 10em 0;
+    background-image: url('../images/auth-background.webp');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.auth-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 2em;
 }
 
 /* Bookings Portal */
@@ -207,7 +217,6 @@ a:hover {
 
 footer {
     padding-top: 3em;
-    background-color: #fff9f0;
 }
 
 .footer-h2 {
