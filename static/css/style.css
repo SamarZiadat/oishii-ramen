@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bs-tertiary-bg-rgb:
+}
+
 body {
     font-family: Cantarell, sans-serif;
     color: #100B00;
@@ -125,10 +129,6 @@ a:hover {
     color: #F0A202;
 }
 
-.bg-body-tertiary {
-    --bs-bg-opacity: 0;
-}
-
 .navbar {
     padding: 1em 3em;
 }
@@ -202,7 +202,8 @@ a:hover {
 /* Footer */
 
 footer {
-    padding-top: 8em;
+    padding-top: 3em;
+    background-color: #fff9f0;
 }
 
 .footer-h2 {
