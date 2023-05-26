@@ -36,11 +36,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-if development:
-    ALLOWED_HOSTS = ['localhost']
-else:
-    ALLOWED_HOSTS = ['oishii-ramen.herokuapp.com', 'localhost']
-
+ALLOWED_HOSTS = ['oishii-ramen.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -167,7 +163,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.\
-    StaticHashedCloudinaryStorage'
+StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
