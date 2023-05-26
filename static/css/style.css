@@ -55,9 +55,10 @@ a:hover {
 
 .hero {
     background-image: url("https://res.cloudinary.com/dwopdkktn/image/upload/v1683816301/static/images/hero-image.7f80e8180155.webp");
-    background-size: 100vw;
+    background-size: cover;
     padding-top: 20%;
     padding-bottom: 20%;
+    background-repeat: no-repeat;
 }
 
 .about {
@@ -237,5 +238,9 @@ on screens smaller than boostrap lg */
 
     .about {
         width: 80vw;
+    }
+
+    .card-img-top {
+        height: 100%;
     }
 }
