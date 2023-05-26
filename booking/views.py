@@ -72,7 +72,7 @@ class CourseDetail(View):
         )
 
 
-class CourseMyBookings(View):
+class CourseMyBookings(LoginRequiredMixin, View):
     """
     Display booking information for current user
 
@@ -111,9 +111,9 @@ class CourseMyBookings(View):
         return HttpResponseRedirect(reverse('course_mybookings'))
 
 
-class CourseBook(View):
+class CourseBook(LoginRequiredMixin, View):
     """
-    Book course displayed on course detail page
+    Book course panel displayed on course detail page
 
     post method : check input, create new booking for current user
                   for selected timetabled course then redirect to
