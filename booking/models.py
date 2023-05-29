@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator
+from django.urls import reverse
 
 SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -23,6 +24,10 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """Returns successful post to related slug url"""
+        return reverse('course_detail', kwargs={'slug': self.slug})
 
 
 class Review(models.Model):

@@ -20,7 +20,7 @@
     <div class="course-title">
         <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
         {% if user.is_staff %}
-        <a href="{% url 'course_edit' %}"><i class="fa fa-edit"></i>Edit
+        <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Edit
             Course</a>
         {% endif %}
     </div>

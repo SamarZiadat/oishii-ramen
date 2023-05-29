@@ -24,9 +24,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'course_mybookings' %}">Bookings</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
-                    </li>
                     {% if user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'course_add' %}">Add Course</a>
@@ -40,6 +37,9 @@
                         <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+                    </li>
                 </ul>
                 {% if user.is_authenticated %}
                 <span class="navbar-text">

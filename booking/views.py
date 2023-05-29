@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.urls import reverse
 from .models import Course, Booking, Timetable
 from .forms import ReviewForm, CourseForm
+from django.contrib.messages.views import SuccessMessageMixin
 import datetime
 import pytz
 
@@ -137,29 +138,54 @@ class CourseBook(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('course_mybookings'))
 
 
-class CourseAdd(LoginRequiredMixin, generic.CreateView):
+class CourseAdd(LoginRequiredMixin,
+                SuccessMessageMixin,
+                UserPassesTestMixin,
+                generic.CreateView):
     """
     View to allow staff to add a new course
+    Success message as user feedback
     """
     model = Course
     template_name = 'course_add.html'
     form_class = CourseForm
+    success_message = 'Course added!'
+
+    def form_valid(self, form):
+        """Validate form after confirming user is staff"""
+        form.instance.is_staff = self.request.user.is_staff
+        return super().form_valid(form)
+
+    def test_func(self):
+        """Test that logged in user is staff"""
+        post = self.get_slug_field()
+        if self.request.user.is_staff:
+            return True
+        return False
 
 
 class CourseEdit(LoginRequiredMixin,
                  UserPassesTestMixin,
+                 SuccessMessageMixin,
                  generic.UpdateView):
     """
     View to allow staff to edit courses
     on the course detail page
+    Success message as user feedback
     """
     model = Course
     template_name = 'course_edit.html'
     form_class = CourseForm
+    success_message = 'Course updated!'
+
+    def form_valid(self, form):
+        """Validate form after confirming user is staff"""
+        form.instance.is_staff = self.request.user.is_staff
+        return super().form_valid(form)
 
     def test_func(self):
         """Test that logged in user is staff"""
         post = self.get_object()
-        if self.request.user == is_staff:
+        if self.request.user.is_staff:
             return True
         return False
