@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="content-container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>Add a course:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <br>
+                <button type="submit" class="btn button-styling">Submit</button>
+                <a href="{{ request.META.HTTP_REFERER }}" class="btn button-styling">Cancel</a>
+            </form>
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

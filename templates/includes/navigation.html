@@ -22,20 +22,30 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'course_mybookings' %}">My Bookings</a>
+                        <a class="nav-link" href="{% url 'course_mybookings' %}">Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
                     </li>
+                    {% if user == "staff" %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'course_add' %}">Add Course</a>
+                    </li>
+                    {% endif %}
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Sign up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
                     </li>
                     {% endif %}
                 </ul>
+                {% if user.is_authenticated %}
+                <span class="navbar-text">
+                    <i class="far fa-user"></i> {{ user }}
+                </span>
+                {% endif %}
             </div>
         </div>
         </div>

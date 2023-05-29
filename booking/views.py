@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse
 from .models import Course, Booking, Timetable
-from .forms import ReviewForm
+from .forms import ReviewForm, CourseForm
 import datetime
 import pytz
 
@@ -135,3 +135,12 @@ class CourseBook(LoginRequiredMixin, View):
             # booking is not re-submitted on bookings page re-load
 
         return HttpResponseRedirect(reverse('course_mybookings'))
+
+
+class CourseAdd(LoginRequiredMixin, generic.CreateView):
+    """
+    View to allow staff to add a new course
+    """
+    model = Course
+    template_name = 'course_add.html'
+    form_class = CourseForm
