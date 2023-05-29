@@ -17,7 +17,13 @@
 </div>
 
 <div class="row course-detail-row content-container">
-    <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
+    <div class="course-title">
+        <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
+        {% if user.is_staff %}
+        <a href="{% url 'course_edit' %}"><i class="fa fa-edit"></i>Edit
+            Course</a>
+        {% endif %}
+    </div>
     <div class="course-content col-12 col-lg-8">
         {% if course.skill_level == 0 %}
         <h2><span class="badge text-bg-primary">Beginner</span></h2>

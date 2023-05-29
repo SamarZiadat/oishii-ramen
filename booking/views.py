@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from django.urls import reverse
 from .models import Course, Booking, Timetable
@@ -144,3 +144,22 @@ class CourseAdd(LoginRequiredMixin, generic.CreateView):
     model = Course
     template_name = 'course_add.html'
     form_class = CourseForm
+
+
+class CourseEdit(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 generic.UpdateView):
+    """
+    View to allow staff to edit courses
+    on the course detail page
+    """
+    model = Course
+    template_name = 'course_edit.html'
+    form_class = CourseForm
+
+    def test_func(self):
+        """Test that logged in user is staff"""
+        post = self.get_object()
+        if self.request.user == is_staff:
+            return True
+        return False

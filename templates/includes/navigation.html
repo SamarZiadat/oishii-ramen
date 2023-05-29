@@ -27,7 +27,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
                     </li>
-                    {% if user == "staff" %}
+                    {% if user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'course_add' %}">Add Course</a>
                     </li>
