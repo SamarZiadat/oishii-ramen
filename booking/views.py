@@ -73,16 +73,6 @@ class CourseDetail(View):
             },
         )
 
-    def post(self, request, *args, **kwargs):
-        id = request.POST.get('delete_course_id')
-        booking = get_object_or_404(Course, id=id)
-        course.delete()
-
-        # Used HttpResponseRedirect here instead of render to ensure
-        # delete request is not re-submitted on home page re-load
-        messages.success(request, 'The course has been deleted.')
-        return HttpResponseRedirect('index.html')
-
 
 class CourseMyBookings(LoginRequiredMixin, View):
     """
@@ -193,6 +183,33 @@ class CourseEdit(LoginRequiredMixin,
         """Validate form after confirming user is staff"""
         form.instance.is_staff = self.request.user.is_staff
         return super().form_valid(form)
+
+    def test_func(self):
+        """Test that logged in user is staff"""
+        post = self.get_object()
+        if self.request.user.is_staff:
+            return True
+        return False
+
+
+class CourseDelete(LoginRequiredMixin,
+                   SuccessMessageMixin,
+                   UserPassesTestMixin,
+                   generic.DeleteView):
+    """
+    View to allow staff users to delete course
+    on the course detail page
+    Success message as user feedback
+    """
+    model = Course
+    template_name = 'course_detail.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Course deleted.'
+
+    def delete(self, request, *args, **kwargs):
+        """Generate success message on delete view"""
+        messages.success(self.request, self.success_message)
+        return super(CourseDelete, self).delete(request, *args, **kwargs)
 
     def test_func(self):
         """Test that logged in user is staff"""
