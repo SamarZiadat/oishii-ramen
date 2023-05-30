@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.5.0",
+    "jquery": "^3.7.0"
   }
 }
