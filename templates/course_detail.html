@@ -17,13 +17,7 @@
 </div>
 
 <div class="row course-detail-row content-container">
-    <div class="course-title">
-        <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
-        {% if user.is_staff %}
-        <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Edit
-            Course</a>
-        {% endif %}
-    </div>
+    <h1 class="course-title page-heading">Course: {{ course.title }}</h1>
     <div class="course-content col-12 col-lg-8">
         {% if course.skill_level == 0 %}
         <h2><span class="badge text-bg-primary">Beginner</span></h2>
@@ -41,6 +35,21 @@
         <p class="course-content-text ">
             {{ course.content | safe }}
         </p>
+
+        <!-- only logged in staff should see course edit and delete options -->
+        {% if user.is_staff %}
+        <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Edit
+            Course</a>
+        <!-- Button trigger Course Delete modal -->
+        <form action="{% url 'course_detail' %}" method="POST">
+            {% csrf_token %}
+            <!-- ask the staff user to confirm when about to delete a course -->
+            <button type="submit" class="btn btn-form button-styling" value="{{course.id}}" name="delete_course_id"
+                onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i> Delete this course
+            </button>
+        </form>
+        {% endif %}
+
         <!-- only logged in users should see the booking panel -->
         {% if user.is_authenticated %}
     </div>

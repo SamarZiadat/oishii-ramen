@@ -7,6 +7,7 @@ from django.urls import reverse
 from .models import Course, Booking, Timetable
 from .forms import ReviewForm, CourseForm
 from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
 import datetime
 import pytz
 
@@ -71,6 +72,16 @@ class CourseDetail(View):
                 "review_form": ReviewForm()
             },
         )
+
+    def post(self, request, *args, **kwargs):
+        id = request.POST.get('delete_course_id')
+        booking = get_object_or_404(Course, id=id)
+        course.delete()
+
+        # Used HttpResponseRedirect here instead of render to ensure
+        # delete request is not re-submitted on home page re-load
+        messages.success(request, 'The course has been deleted.')
+        return HttpResponseRedirect('index.html')
 
 
 class CourseMyBookings(LoginRequiredMixin, View):
