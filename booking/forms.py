@@ -4,6 +4,9 @@ from django_summernote.widgets import SummernoteWidget
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Form for reviews
+    """
     class Meta:
         model = Review
         fields = ('written_review',)
