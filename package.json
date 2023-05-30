@@ -1,0 +1,18 @@
+{
+  "name": "oishii-ramen",
+  "version": "1.0.0",
+  "description": "<h1  align=\"center\">oishii ramen</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/SamarZiadat/oishii-ramen.git)"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
