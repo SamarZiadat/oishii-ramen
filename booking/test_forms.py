@@ -16,6 +16,7 @@ class TestReviewForm(TestCase):
         form = ReviewForm()
         self.assertEqual(form.Meta.fields, ('message',))
 
+
 class TestCourseForm(TestCase):
 
     # test that title field is required
@@ -25,14 +26,15 @@ class TestCourseForm(TestCase):
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
 
-    # test that skill level field is required 
+    # test that skill level field is required
     def test_course_skill_level_is_required(self):
         form = CourseForm({'skill_level': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('skill_level', form.errors.keys())
-        self.assertEqual(form.errors['skill_level'][0], 'This field is required.')
-    
-    # test that duration field is required 
+        self.assertEqual(form.errors['skill_level'][0],
+                         'This field is required.')
+
+    # test that duration field is required
     def test_course_duration_in_hrs_is_required(self):
         form = CourseForm({'duration_in_hrs': ''})
         self.assertFalse(form.is_valid())
@@ -40,7 +42,7 @@ class TestCourseForm(TestCase):
         self.assertEqual(form.errors['duration_in_hrs'][0],
                          'This field is required.')
 
-    # test that price field is required 
+    # test that price field is required
     def test_course_price_in_gbp_is_required(self):
         form = CourseForm({'price_in_gbpprice_in_gbp': ''})
         self.assertFalse(form.is_valid())
@@ -48,7 +50,7 @@ class TestCourseForm(TestCase):
         self.assertEqual(form.errors['price_in_gbp'][0],
                          'This field is required.')
 
-    # test that content field is required 
+    # test that content field is required
     def test_post_content_is_required(self):
         form = CourseForm({'content': ''})
         self.assertFalse(form.is_valid())
@@ -58,5 +60,6 @@ class TestCourseForm(TestCase):
     # test that fields are explicit in course metaclass
     def test_fields_are_explicit_in_post_metaclass(self):
         form = CourseForm()
-        self.assertEqual(form.Meta.fields, ['title', 'skill_level', 'duation_in_hrs',
-                         'price_in_gbp', 'featured_image', 'content'])
+        self.assertEqual(form.Meta.fields, ['title', 'skill_level',
+                         'duration_in_hrs', 'price_in_gbp', 'featured_image',
+                                            'content'])
