@@ -43,7 +43,8 @@ class TestModels(TestCase):
     def test_course_str(self):
         self.assertEqual(str(self.course), 'test hike A')
 
-    # test default values working as expected for Course status and image fields
+    # test default values working as expected
+    # for Course status and image fields
     def test_course_defaults(self):
         self.assertEqual(self.course.status, 0)
         self.assertEqual(self.course.featured_image, 'placeholder')
@@ -90,7 +91,7 @@ class TestModels(TestCase):
     def test_timetable_str(self):
         self.assertEqual(
             str(self.timetable), 'Course test course 1 is scheduled '
-                                'for 2024-04-04 00:00:00+00:00')
+            'for 2024-04-04 00:00:00+00:00')
 
     # test the __str__ method for Booking
     def test_booking_str(self):

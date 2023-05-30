@@ -96,9 +96,9 @@ class TestAdmin(TestCase):
     # check that the course is now status=1 (published)
     def test_publish_courses(self):
         User.objects.create_superuser(
-            username='super', email='test@example.com', password='54321',
+            user='super', email='test@example.com', password='54321',
         )
-        self.client.login(username='superstar', password='54321')
+        self.client.login(user='superstar', password='54321')
 
         # count how many courses are published
         published = Course.objects.filter(status=1).count()
