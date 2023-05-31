@@ -201,7 +201,7 @@ class CourseDelete(LoginRequiredMixin,
     """
     model = Course
     template_name = 'index.html'
-    success_url = reverse_lazy('booking')
+    success_url = reverse_lazy('')
     success_message = 'Course deleted.'
 
     def delete(self, request, *args, **kwargs):
