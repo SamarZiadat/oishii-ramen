@@ -51,7 +51,6 @@ a:hover {
 }
 
 .button-styling {
-    --bs-btn-color: white;
     --bs-btn-bg: #C80000;
     --bs-btn-border-radius: 3rem;
 }

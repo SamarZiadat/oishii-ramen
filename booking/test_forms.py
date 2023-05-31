@@ -8,13 +8,15 @@ class TestReviewForm(TestCase):
     def test_message_is_required(self):
         form = ReviewForm({'message': ''})
         self.assertFalse(form.is_valid())
-        self.assertIn('message', form.errors.keys())
-        self.assertEqual(form.errors['message'][0], 'This field is required.')
+        self.assertIn('written_review', form.errors.keys())
+        self.assertEqual(form.errors[
+                                     'written_review']
+                                    [0], 'This field is required.')
 
     # test that message is named as an explicit field
     def test_fields_are_explicit_in_forms_metaclass(self):
         form = ReviewForm()
-        self.assertEqual(form.Meta.fields, ('message',))
+        self.assertEqual(form.Meta.fields, ('written_review',))
 
 
 class TestCourseForm(TestCase):
@@ -61,5 +63,6 @@ class TestCourseForm(TestCase):
     def test_fields_are_explicit_in_post_metaclass(self):
         form = CourseForm()
         self.assertEqual(form.Meta.fields, ['title', 'skill_level',
-                         'duration_in_hrs', 'price_in_gbp', 'featured_image',
-                                            'content'])
+                         'duration_in_hrs', 'price_in_gbp', 'content',
+                                            'featured_image',
+                                            ])

@@ -45,9 +45,9 @@ class TestAdmin(TestCase):
     def test_approve_reviews(self):
 
         User.objects.create_superuser(
-            username='super', email='test@example.com', password='54321',
+            user='super', email='test@example.com', password='54321',
         )
-        self.client.login(username='super', password='54321')
+        self.client.login(user='super', password='54321')
 
         # count how many reviews are currently approved
         approved = Review.objects.filter(approved=True).count()
@@ -71,9 +71,9 @@ class TestAdmin(TestCase):
     def test_approve_bookings(self):
 
         User.objects.create_superuser(
-            username='super', email='test@example.com', password='54321',
+            user='super', email='test@example.com', password='54321',
         )
-        self.client.login(username='super', password='54321')
+        self.client.login(user='super', password='54321')
 
         # count how many bookings are currently approved
         approved = Booking.objects.filter(approved=True).count()
