@@ -10,6 +10,7 @@ from .models import Course, Booking, Timetable
 from .forms import ReviewForm, CourseForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 import datetime
 import pytz
 
@@ -196,7 +197,7 @@ class CourseDelete(LoginRequiredMixin,
                    generic.DeleteView):
     """
     View to allow staff users to delete course
-    on the course confirm delete page
+    on the course delete confirm page
     Success message as user feedback
     """
     model = Course
@@ -204,10 +205,10 @@ class CourseDelete(LoginRequiredMixin,
     success_url = reverse_lazy('')
     success_message = 'Course deleted.'
 
-    def delete(self, request, *args, **kwargs):
-        """Generate success message on delete view"""
-        messages.success(self.request, self.success_message)
-        return super(CourseDelete, self).delete(request, *args, **kwargs)
+    def post(self, request, slug, *args, **kwargs):
+        course = get_object_or_404(Course, slug=slug)
+        course.delete()
+        return redirect(reverse('home'))
 
     def test_func(self):
         """Test that logged in user is staff"""
@@ -218,12 +219,9 @@ class CourseDelete(LoginRequiredMixin,
 
 class CourseDeleteConfirm(View):
     """
-    Display course details for selected course
 
     get method : retrieve course details including reviews
                  and render course detail page
-
-    post method : validate review input, store and re-load detail page
     """
     def get(self, request, slug, *args, **kwargs):
         queryset = Course.objects.filter(status=1)
