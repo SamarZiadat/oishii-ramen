@@ -218,6 +218,10 @@ a:hover {
     padding: 2em;
 }
 
+.delete-button {
+    margin-top: 1em;
+}
+
 /* Bookings Portal */
 
 .booking-title {

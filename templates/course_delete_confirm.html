@@ -11,7 +11,7 @@
                 <h3>Are you sure you want to delete this course?</h3>
                 <form action="{% url 'course_delete' course.slug %}" method="POST" class="d-inline">
                     {% csrf_token %}
-                    <button type="submit" class="btn button-styling">Delete</button>
+                    <button type="submit" class="btn delete-button button-styling">Delete</button>
                 </form>
             </div>
         </div>
