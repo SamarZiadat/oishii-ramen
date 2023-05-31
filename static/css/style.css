@@ -178,6 +178,10 @@ a:hover {
     padding-top: 3em;
 }
 
+.delete-course {
+    padding-left: 1em;
+}
+
 /* Log in / Log out / Sign Up */
 
 .auth-container {

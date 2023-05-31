@@ -38,9 +38,10 @@
 
         <!-- only logged in staff should see course edit and delete options -->
         {% if user.is_staff %}
-        <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Edit
+        <a class="edit-course" href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i> Edit
             Course</a>
-        <a href="{% url 'course_delete_confirm' course.slug %}"><i class="fa fa-edit"></i>Delete
+        <a class="delete-course" href="{% url 'course_delete_confirm' course.slug %}"><i
+                class="fa-regular fa-trash-can"></i> Delete
             Course</a>
         {% endif %}
 
