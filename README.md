@@ -128,6 +128,42 @@ As this project uses Django templates the html has been validated by manually cl
         -   Course Delete Confirmation Page:
 ![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/deleteconfirm-html-summary.png?raw=true)
 
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors. There was one warning that read: "Imported style sheets are not checked in direct input and file upload modes", which is fine as it's referring to a google fonts import.
+
+	- Result summary:
+![CSS validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/css-validation.png?raw=true)
+
+- [Javascript Validator](https://jshint.com/):
+JSHint was used to validate the JavaScript with no errors highlighted.
+	- Result summary:
+![JSHint validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/jshint-validation.png?raw=true)
+
+- [PEP 8 Python Linter](https://pep8ci.herokuapp.com/):
+PEP 8 Online linter (Python validator). The code passed without any errors on all files tested:
+
+- Project settings.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-settings.png?raw=true)
+- Project urls.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-orurls.png?raw=true)
+- Application urls.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-projecturls.png?raw=true)
+- admin.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-admin.png?raw=true)
+- test_admin.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-admin.png?raw=true)
+- forms.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-forms.png?raw=true)
+- test_forms.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-forms.png?raw=true)
+- models.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-models.png?raw=true)
+- test_models.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-models.png?raw=true)
+- views.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-views.png?raw=true)
+- test_views.py result summary:
+![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-views.png?raw=true)
 
 ### Automated Testing
 
