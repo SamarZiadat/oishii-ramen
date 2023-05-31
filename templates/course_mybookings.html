@@ -64,7 +64,7 @@
                                 <form action="{% url 'course_mybookings' %}" method="POST">
                                     {% csrf_token %}
                                     <!-- ask the user to confirm when about to delete a booking -->
-                                    <button type="submit" class="btn btn-form button-styling" value="{{booking.id}}"
+                                    <button type="submit" class="btn btn-danger button-styling" value="{{booking.id}}"
                                         name="cancel_booking_id" onclick="return confirm('Are you sure?')">Cancel
                                     </button>
                                 </form>
