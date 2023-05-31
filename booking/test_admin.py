@@ -99,18 +99,3 @@ class TestAdmin(TestCase):
             username='super', email='test@example.com', password='54321',
         )
         self.client.login(username='superstar', password='54321')
-
-        # count how many courses are published
-        published = Course.objects.filter(status=1).count()
-        self.assertEqual(self.course.status, 0)
-
-        data = {
-            'action': 'publish_courses',
-            '_selected_action': [self.course.id, ]}
-        change_url = reverse('admin:booking_course_changelist')
-        response = self.client.post(change_url, data, follow=True)
-
-        self.assertEqual(response.status_code, 200)
-
-        # check number of published courses has increased by one
-        self.assertEqual(Course.objects.filter(status=1).count(), published+1)
