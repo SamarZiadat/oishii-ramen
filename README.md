@@ -112,6 +112,24 @@ I used logo.com to generate a logo for
 
 ## Testing
 
+## Testing
+
+### Validator Testing
+- [HTML Validator](https://validator.w3.org/)
+
+	-   As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator (link shown above). HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customized and so have been validated, with results below.
+
+      - <details>
+        <summary>Index Page - Summary</summary>
+![Index Page - Summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/index-html-summary.png?raw=true)
+      </details>
+
+        -   Hike Detail Page - Summary
+        -   My Bookings Page - Summary
+        -   Sign up Page - Summary
+        -   Log in Page - Summary
+        -   Log out Page - Summary
+
 ### Automated Testing
 
 -   [Jest](https://jestjs.io/)  was used to test the application javascript and jQuery code. The functionality tested was the code to fade out, slide up and remove any raised alert messages after a 5 second delay. The code is located in [Script JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/script.js), the test is located in  [Test JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/tests/script.test.js). 
