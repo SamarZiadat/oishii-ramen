@@ -113,7 +113,7 @@ I used logo.com to generate a logo for
 ## Testing
 
 ### Validator Testing
-- [HTML Validator](https://validator.w3.org/)
+- [HTML Validator](https://validator.w3.org/):
 As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator (link shown above). To validate the HTML files all Django template tags were manually removed with the HTML code copied and inserted to the base template, including manually pasting in navigation and footer templates into all page testing.
 
      - Index Page:![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/index-html-summary.png?raw=true)
@@ -128,7 +128,7 @@ As this project uses Django templates the html has been validated by manually cl
         -   Course Delete Confirmation Page:
 ![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/deleteconfirm-html-summary.png?raw=true)
 
-- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [CSS Validator](https://jigsaw.w3.org/css-validator/):
 The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors. There was one warning that read: "Imported style sheets are not checked in direct input and file upload modes", which is fine as it's referring to a google fonts import.
 
 	- Result summary:
