@@ -8,6 +8,8 @@ The website can be used by general users to view information on these courses, s
 
 Staff at oishii ramen can use the admin login of the website to draft and publish courses, remove courses, approve user reviews, timetable the courses, and confirm/approve bookings for timetabled courses depending on available capacity.
 
+![Responsive mockup](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/responsive-mockup.png?raw=true)
+
 ## Table of Contents
 - [User Experience Design (UX)](https://github.com/SamarZiadat/oishii-ramen#user-experience-design-ux)
 	 -   [The Strategy Plane](https://github.com/SamarZiadat/oishii-ramen#the-strategy-plane)
@@ -87,5 +89,106 @@ Acceptance criteria was created in relation to each of the user stories. These s
 -   Home page with app information
 -   Responsive Design - the app should be fully functional on all devices from 320px up
 -   Hamburger menu for devices with a smaller viewport devices
-- 	Ability to perform CRUD functionality on reservations
+- Ability to perform CRUD functionality on reservations
 -   Restricted role based features
+
+### Design
+
+#### Wireframes
+
+#### Entity-Relationship diagram for DBMS
+
+Notes on the ER diagram:  
+-   The ER diagram provided shows the logical data model. 
+- The Users table in the ER diagrams is also a logical representation of the data captured during user registration and how it relates to the application data model. The Users table itself is not declared in the models.py file, but is handled by the django modules and this logical view does not reflect all columns and constraints etc. used by the physical data tables in the database.
+
+![DBMS diagram](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/dbms-diagram.png?raw=true)
+
+#### Logo
+I used logo.com to generate a logo for
+#### Colour Scheme
+#### Typography
+
+
+## Testing
+
+### Automated Testing
+
+-   [Jest](https://jestjs.io/)  was used to test the application javascript and jQuery code. The functionality tested was the code to fade out, slide up and remove any raised alert messages after a 5 second delay. The code is located in [Script JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/script.js), the test is located in  [Test JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/tests/script.test.js). 
+
+- By installing the Jest framework and using the npm test command the following test suites were completed:
+![Jest testing](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/jest-testing.png?raw=true)
+
+-   [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/)  and Django TestCase was used to create automatic tests for Python files. The test reporting tool ’Coverage’ was installed to show the percentage of Python code that’s been covered by tests.
+    
+-   A total of 25 tests were written for the following files :
+    
+    -   [forms.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/forms.py)  test file:  [test_forms.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_forms.py)
+    -   [models.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/models.py)  test file:  [test_models.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_models.py)
+    -   [views.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/views.py)  test file:  [test_views.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_views.py)
+    -   [admin.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/admin.py)  test file:  [test_admin.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_admin.py)  (tests were added for the customizations made to the django admin functionality)
+-   Django test results and coverage:
+![enter image description here](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/coverage-django-testing.png?raw=true)
+## Deployment
+
+### Version Control
+
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘oishii-ramen’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+`git add <file>`  - This command was used to add the file(s) to the staging area before they are committed.
+
+`git commit -m “commit message”`  - This command was used to commit changes to the local repository queue ready for the final step.
+
+`git push`  - This command was used to push all committed code to the remote repository on github.
+
+### Heroku Deployment
+
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+-   Navigate to heroku and create an account
+-   Click the new button in the top right corner
+-   Select create new app
+-   Enter app name
+-   Select region and click create app
+-   Click the resources tab and search for Heroku Postgres
+-   Select hobby dev and continue
+-   Go to the settings tab and then click reveal config vars
+-   Add the following config vars:
+    -   SECRET_KEY: (Your secret key)
+    -   DATABASE_URL: (This should already exist with add on of postgres)
+    -   EMAIL_HOST_USER: (email address)
+    -   EMAIL_HOST_PASS: (email app password)
+    -   CLOUNDINARY_URL: (cloudinary api url)
+-   Click the deploy tab
+-   Scroll down to Connect to GitHub and sign in / authorize when prompted
+-   In the search box, find the repositoy you want to deploy and click connect
+-   Scroll down to Manual deploy and choose the main branch
+-   Click deploy
+
+The app should now be deployed.
+
+### Run Locally
+
+Navigate to the GitHub Repository you want to clone to use locally:
+
+-   Click on the code drop down button
+-   Click on HTTPS
+-   Copy the repository link to the clipboard
+-   Open your IDE of choice (git must be installed for the next steps)
+-   Type git clone copied-git-url into the IDE terminal
+
+The project will now have been cloned on your local machine for use.
+
+### Fork Project
+
+Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+
+-   Navigate to the GitHub Repository you want to fork.
+    
+-   On the top right of the page under the header, click the fork button.
+    
+-   This will create a duplicate of the full project in your GitHub Repository.
+   
+
