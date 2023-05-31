@@ -67,7 +67,7 @@
                         {% endfor %}
                     </select>
                     <!-- disable the booking button if no upcoming courses are scheduled for this course -->
-                    <button type="submit" class="btn btn-block btn-form button-styling"
+                    <button type="submit" class="btn btn-block btn-danger button-styling"
                         {% if course.timeslots.all.count == 0 %} disabled {% endif %}>Book</button>
                 </div>
             </form>
@@ -116,7 +116,7 @@
                 <form method="post">
                     {{ review_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn button-styling">Post Review</button>
+                    <button type="submit" class="btn btn-danger button-styling">Post Review</button>
                 </form>
                 {% endif %}
                 {% endif %}
