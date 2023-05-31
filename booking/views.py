@@ -95,6 +95,13 @@ class CourseMyBookings(LoginRequiredMixin, View):
                     user=self.request.user).filter(
                     course__starts__lte=datetime.datetime.now(
                                         pytz.utc)).order_by('course__starts')
+        if self.request.user.is_staff:
+            bookings = Booking.objects.filter(
+                    course__starts__gt=datetime.datetime.now(
+                                        pytz.utc)).order_by('course__starts')
+            past_bookings = Booking.objects.filter(
+                    course__starts__lte=datetime.datetime.now(
+                                        pytz.utc)).order_by('course__starts')
 
         return render(
             request,
