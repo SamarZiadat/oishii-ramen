@@ -18,4 +18,7 @@ urlpatterns = [
                     name='course_edit'),
                path('<slug:slug>/delete/', views.CourseDelete.as_view(),
                     name='course_delete'),
+               path('<slug:slug>/delete-confirm/',
+                    views.CourseDeleteConfirm.as_view(),
+                    name='course_delete_confirm'),
 ]

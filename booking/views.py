@@ -26,7 +26,7 @@ class CourseList(generic.ListView):
 
 class CourseDetail(View):
     """
-    Display course details for selected hike
+    Display course details for selected course
 
     get method : retrieve course details including reviews
                  and render course detail page
@@ -196,12 +196,12 @@ class CourseDelete(LoginRequiredMixin,
                    generic.DeleteView):
     """
     View to allow staff users to delete course
-    on the course detail page
+    on the course confirm delete page
     Success message as user feedback
     """
     model = Course
-    template_name = 'course_detail.html'
-    success_url = reverse_lazy('home')
+    template_name = 'index.html'
+    success_url = reverse_lazy('booking')
     success_message = 'Course deleted.'
 
     def delete(self, request, *args, **kwargs):
@@ -214,3 +214,25 @@ class CourseDelete(LoginRequiredMixin,
         if self.request.user.is_staff:
             return True
         return False
+
+
+class CourseDeleteConfirm(View):
+    """
+    Display course details for selected course
+
+    get method : retrieve course details including reviews
+                 and render course detail page
+
+    post method : validate review input, store and re-load detail page
+    """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Course.objects.filter(status=1)
+        course = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "course_delete_confirm.html",
+            {
+                "course": course,
+            },
+        )

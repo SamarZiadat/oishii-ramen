@@ -40,7 +40,7 @@
         {% if user.is_staff %}
         <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Edit
             Course</a>
-        <a href="{% url 'course_edit' course.slug %}"><i class="fa fa-edit"></i>Delete
+        <a href="{% url 'course_delete_confirm' course.slug %}"><i class="fa fa-edit"></i>Delete
             Course</a>
         {% endif %}
 
