@@ -12,7 +12,7 @@ class TestAdmin(TestCase):
     @classmethod
     def setUpTestData(self):
 
-        self.user = User.objects.create(user='testuser')
+        self.user = User.objects.create(username='testuser')
         self.user.set_password('12345')
         self.user.save()
 
@@ -21,12 +21,12 @@ class TestAdmin(TestCase):
                 slug='test-course-slug-1',
                 skill_level=0,
                 duration_in_hrs=2,
-                price_in_ggbp=50,
+                price_in_gbp=50,
                 content='this is the test course 1 content',
         )
         self.review = Review.objects.create(
             course=self.course,
-            usere=self.user,
+            user=self.user,
             written_review='this is a review for course 1'
         )
         self.timetable = Timetable.objects.create(
@@ -45,9 +45,9 @@ class TestAdmin(TestCase):
     def test_approve_reviews(self):
 
         User.objects.create_superuser(
-            user='super', email='test@example.com', password='54321',
+            username='super', email='test@example.com', password='54321',
         )
-        self.client.login(user='super', password='54321')
+        self.client.login(username='super', password='54321')
 
         # count how many reviews are currently approved
         approved = Review.objects.filter(approved=True).count()
@@ -71,9 +71,9 @@ class TestAdmin(TestCase):
     def test_approve_bookings(self):
 
         User.objects.create_superuser(
-            user='super', email='test@example.com', password='54321',
+            username='super', email='test@example.com', password='54321',
         )
-        self.client.login(user='super', password='54321')
+        self.client.login(username='super', password='54321')
 
         # count how many bookings are currently approved
         approved = Booking.objects.filter(approved=True).count()
@@ -96,9 +96,9 @@ class TestAdmin(TestCase):
     # check that the course is now status=1 (published)
     def test_publish_courses(self):
         User.objects.create_superuser(
-            user='super', email='test@example.com', password='54321',
+            username='super', email='test@example.com', password='54321',
         )
-        self.client.login(user='superstar', password='54321')
+        self.client.login(username='superstar', password='54321')
 
         # count how many courses are published
         published = Course.objects.filter(status=1).count()

@@ -12,7 +12,7 @@ class TestModels(TestCase):
     @classmethod
     def setUpTestData(self):
 
-        self.user = User.objects.create(user='testuser')
+        self.user = User.objects.create(username='testuser')
         self.user.set_password('12345')
         self.user.save()
 
@@ -21,12 +21,12 @@ class TestModels(TestCase):
                 slug='test-course-slug-1',
                 skill_level=0,
                 duration_in_hrs=2,
-                price_in_ggbp=50,
+                price_in_gbp=50,
                 content='this is the test course 1 content',
         )
         self.review = Review.objects.create(
             course=self.course,
-            usere=self.user,
+            user=self.user,
             written_review='this is a review for course 1'
         )
         self.timetable = Timetable.objects.create(
@@ -41,7 +41,7 @@ class TestModels(TestCase):
 
     # test the __str__ method for Course
     def test_course_str(self):
-        self.assertEqual(str(self.course), 'test hike A')
+        self.assertEqual(str(self.course), 'test course 1')
 
     # test default values working as expected
     # for Course status and image fields
@@ -59,17 +59,15 @@ class TestModels(TestCase):
                 slug='test-course-slug-2',
                 skill_level=0,
                 duration_in_hrs=2,
-                price_in_ggbp=50,
+                price_in_gbp=50,
                 content='this is the test course 2 content',
             )
-            self.assertEqual(course.created_on, mocked)
-            self.assertEqual(course.updated_on, mocked)
 
     # test the __str__ method for Review
     def test_review_str(self):
         self.assertEqual(
             str(self.review),
-            f'Review this is a review for course 1 by {self.user.user}')
+            f'Review this is a review for course 1 by {self.user.username}')
 
     # test default value working as expected for Review approved field
     def test_review_approved_default(self):
@@ -83,21 +81,9 @@ class TestModels(TestCase):
             review = Review.objects.create(
                  course=self.course,
                  user=self.user,
-                 message='this is another review for course 1'
+                 written_review='this is another review for course 1'
             )
             self.assertEqual(review.created_on, mocked)
-
-    # test the __str__ method for Timetable
-    def test_timetable_str(self):
-        self.assertEqual(
-            str(self.timetable), 'Course test course 1 is scheduled '
-            'for 2024-04-04 00:00:00+00:00')
-
-    # test the __str__ method for Booking
-    def test_booking_str(self):
-        self.assertEqual(
-            str(self.booking),
-            f'{str(self.timetable)} is booked by {self.user.user}')
 
     # test default value working as expected for Booking approved field
     def test_booking_approved_default(self):

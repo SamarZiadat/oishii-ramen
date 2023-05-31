@@ -12,7 +12,7 @@ class TestViews(TestCase):
     @classmethod
     def setUpTestData(self):
 
-        self.user = User.objects.create(user='testuser')
+        self.user = User.objects.create(username='testuser')
         self.user.set_password('12345')
         self.user.save()
 
@@ -21,12 +21,12 @@ class TestViews(TestCase):
                 slug='test-course-slug-1',
                 skill_level=0,
                 duration_in_hrs=2,
-                price_in_ggbp=50,
+                price_in_gbp=50,
                 content='this is the test course 1 content',
         )
         self.review = Review.objects.create(
             course=self.course,
-            usere=self.user,
+            user=self.user,
             written_review='this is a review for course 1'
         )
         self.timetable = Timetable.objects.create(
@@ -43,30 +43,29 @@ class TestViews(TestCase):
     def test_get_home_page(self):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'base.html', 'navigation.html',
-                                'footer.html', 'index.html')
+        self.assertTemplateUsed(response, 'base.html',
+                                'index.html')
 
     # retrieve course detail page and check correct templates are used
     def test_get_course_detail_page(self):
         response = self.client.get(
                     reverse('course_detail', args=[self.course.slug]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'base.html', 'navigation.html',
-                                'footer.html', 'index.html')
+        self.assertTemplateUsed(response, 'base.html', 'index.html')
 
     # retrieve booking portal page and check correct templates are used
     def test_get_mybookings_page(self):
         self.client.login(username='testuser', password='12345')
         response = self.client.get(reverse('course_mybookings'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'base.html', 'navigation.html',
-                                'footer.html', 'course_mybookings.html')
+        self.assertTemplateUsed(response, 'base.html',
+                                'course_mybookings.html')
 
     # verify that user can review on course and page is refreshed
     def test_can_comment_on_course(self):
         self.client.login(user='testuser', password='12345')
         response = self.client.post(
-                    reverse('course_detail', args=[self.hcourse.slug]),
+                    reverse('course_detail', args=[self.course.slug]),
                     data={'message': 'new review'})
         self.assertRedirects(
             response, reverse('course_detail', args=[self.course.slug]))
@@ -107,6 +106,6 @@ class TestViews(TestCase):
     def test_get_course_edit(self):
         self.client.login(user='testuser', password='1234')
         response = self.client.get(
-            reverse('course_edit', args=[self.post.slug]))
+            reverse('course_edit', args=[self.course.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'course_edit.html', 'base.html')
