@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from django.urls import reverse
+from django.db import models
+from django.utils.text import slugify
 from .models import Course, Booking, Timetable
 from .forms import ReviewForm, CourseForm
 from django.contrib.messages.views import SuccessMessageMixin
@@ -154,12 +156,10 @@ class CourseAdd(LoginRequiredMixin,
 
     def form_valid(self, form):
         """Validate form after confirming user is staff"""
-        form.instance.is_staff = self.request.user.is_staff
         return super().form_valid(form)
 
     def test_func(self):
         """Test that logged in user is staff"""
-        post = self.get_slug_field()
         if self.request.user.is_staff:
             return True
         return False
@@ -181,12 +181,10 @@ class CourseEdit(LoginRequiredMixin,
 
     def form_valid(self, form):
         """Validate form after confirming user is staff"""
-        form.instance.is_staff = self.request.user.is_staff
         return super().form_valid(form)
 
     def test_func(self):
         """Test that logged in user is staff"""
-        post = self.get_object()
         if self.request.user.is_staff:
             return True
         return False
@@ -213,7 +211,6 @@ class CourseDelete(LoginRequiredMixin,
 
     def test_func(self):
         """Test that logged in user is staff"""
-        post = self.get_object()
         if self.request.user.is_staff:
             return True
         return False

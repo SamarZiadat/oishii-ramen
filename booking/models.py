@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator
 from django.urls import reverse
+from django.utils.text import slugify
 
 SKILL_LEVEL = ((0, "Beginner"), (1, "Intermediate"), (2, "Advanced"))
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -11,7 +12,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Course(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
     duration_in_hrs = models.DecimalField(max_digits=4, decimal_places=2)
     price_in_gbp = models.DecimalField(max_digits=5, decimal_places=2)
@@ -29,6 +30,11 @@ class Course(models.Model):
         """Returns successful post to related slug url"""
         return reverse('course_detail', kwargs={'slug': self.slug})
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
 
 class Review(models.Model):
 
@@ -43,7 +49,7 @@ class Review(models.Model):
     class Meta:
         ordering = ['created_on']
 
-    def __str__(self):
+    def __str__(self, *args, **kwargs):
         return f'Review {self.written_review} by {self.user}'
 
 
