@@ -201,7 +201,7 @@ a:hover {
 
 /* Course Delete Confirm */
 
-.delete-container {
+.form-content-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -211,7 +211,7 @@ a:hover {
     background-repeat: no-repeat;
 }
 
-.delete-container>div {
+.form-content-container>div {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     padding: 2em;

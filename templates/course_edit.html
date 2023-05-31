@@ -4,14 +4,12 @@
 
 {% block content %}
 
-<div class="container">
+<div class="content-container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>Edit Course:</h3>
-        </div>
+        <h2>Edit Course:</h2>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
