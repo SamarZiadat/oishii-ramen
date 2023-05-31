@@ -200,6 +200,24 @@ a:hover {
     padding: 2em;
 }
 
+/* Course Delete Confirm */
+
+.delete-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10em 0;
+    background-image: url('../images/auth-background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.delete-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 2em;
+}
+
 /* Bookings Portal */
 
 .booking-title {
