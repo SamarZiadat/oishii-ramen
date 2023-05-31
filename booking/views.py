@@ -159,6 +159,7 @@ class CourseAdd(LoginRequiredMixin,
     """
     model = Course
     template_name = 'course_add.html'
+    success_url = "/"
     form_class = CourseForm
     success_message = 'Course added!'
 
