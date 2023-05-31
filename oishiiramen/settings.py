@@ -36,7 +36,7 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['oishii-ramen.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['oishii-ramen.herokuapp.com', '8000-samarziadat-oishiiramen-s7zhjlzk6cg.ws-eu98.gitpod.io', 'localhost']
 
 # Application definition
 
