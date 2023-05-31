@@ -55,6 +55,34 @@ a:hover {
     --bs-btn-border-radius: 3rem;
 }
 
+/* Nav Bar */
+
+.nav-link {
+    color: #100B00;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #F0A202;
+}
+
+.navbar {
+    padding: 1em 3em;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-text {
+    padding-left: 0.5em;
+}
+
 /* Content Containers */
 
 .content-container {
@@ -113,40 +141,6 @@ a:hover {
     --bs-pagination-active-color: none;
     --bs-pagination-active-bg: none;
     --bs-pagination-active-border-color: none;
-}
-
-/* Error Pages */
-
-.fa-triangle-exclamation {
-    font-size: 8em;
-}
-
-/* Nav Bar */
-
-.nav-link {
-    color: #100B00;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: #F0A202;
-}
-
-.navbar {
-    padding: 1em 3em;
-}
-
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-.navbar-text {
-    padding-left: 0.5em;
 }
 
 /* Course Detail Page */
@@ -240,6 +234,12 @@ a:hover {
 
 .booking-details {
     padding-bottom: 2em;
+}
+
+/* Error Pages */
+
+.fa-triangle-exclamation {
+    font-size: 8em;
 }
 
 /* Footer */
