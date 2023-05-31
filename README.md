@@ -112,23 +112,22 @@ I used logo.com to generate a logo for
 
 ## Testing
 
-## Testing
-
 ### Validator Testing
 - [HTML Validator](https://validator.w3.org/)
+As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator (link shown above). To validate the HTML files all Django template tags were manually removed with the HTML code copied and inserted to the base template, including manually pasting in navigation and footer templates into all page testing.
 
-	-   As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator (link shown above). HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customized and so have been validated, with results below.
+     - Index Page:![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/index-html-summary.png?raw=true)
+      -   Course Detail Page:![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/coursedetail-html-summary.png?raw=true)
+       -   Bookings Page:
+![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/mybooking-html-summary.png?raw=true)
+        -   Course Add Page:
+![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/courseadd-html-summary.png?raw=true)
+         -   Edit Course Page:
+![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/editcourse-html-summary.png?raw=true)
 
-      - <details>
-        <summary>Index Page - Summary</summary>
-![Index Page - Summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/index-html-summary.png?raw=true)
-      </details>
+        -   Course Delete Confirmation Page:
+![testing summary](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/deleteconfirm-html-summary.png?raw=true)
 
-        -   Hike Detail Page - Summary
-        -   My Bookings Page - Summary
-        -   Sign up Page - Summary
-        -   Log in Page - Summary
-        -   Log out Page - Summary
 
 ### Automated Testing
 
