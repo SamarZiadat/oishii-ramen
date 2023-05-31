@@ -12,8 +12,9 @@
             <p class="m3 fs-4">with a specialty focus on traditional ramen</p>
             <p class="m-2 fs-5"><i class="fa-solid fa-location-dot"></i> Glasgow, Scotland
             </p>
-            <a href="{% url 'account_signup' %}"><button class="btn btn-danger button-styling m-3" type="button">Sign Up
-                    Now</button></a>
+            <button class="btn btn-danger button-styling m-3" type="button"><a
+                    href="{% url 'account_signup' %}"></a>Sign Up
+                Now</a></button>
         </div>
     </div>
 </section>
@@ -58,22 +59,21 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
-{% if is_paginated %}
-<div class="content-container">
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; BACK </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> MORE COURSES &raquo;</a></li>
+    {% if is_paginated %}
+    <div class="content-container">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; BACK </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> MORE COURSES &raquo;</a></li>
 
-            {% endif %}
-        </ul>
-    </nav>
-</div>
-{% endif %}
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
 </div>
 <!-- /.course summaries-->
 {%endblock%}
