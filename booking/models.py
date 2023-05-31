@@ -12,7 +12,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Course(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    slug = models.SlugField(max_length=200, unique=True, null=False)
     skill_level = models.IntegerField(choices=SKILL_LEVEL)
     duration_in_hrs = models.DecimalField(max_digits=4, decimal_places=2)
     price_in_gbp = models.DecimalField(max_digits=5, decimal_places=2)
