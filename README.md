@@ -24,19 +24,10 @@ Staff at oishii ramen can use the admin login of the website to draft and publis
 	    -   [Database Design](https://github.com/SamarZiadat/oishii-ramen#database-design)
 	-   [The Surface Plane](https://github.com/SamarZiadat/oishii-ramen#the-surface-plane)
 	    -   [Design](https://github.com/SamarZiadat/oishii-ramen#design)
-	        -   [Colour Scheme](https://github.com/SamarZiadat/oishii-ramen#colour-scheme)
-	        -   [Typography](https://github.com/SamarZiadat/oishii-ramen#typography)
-	        -   [Imagery](https://github.com/SamarZiadat/oishii-ramen#imagery)
 	-   [Technologies](https://github.com/SamarZiadat/oishii-ramen#technologies)
 	-   [Testing](https://github.com/SamarZiadat/oishii-ramen#testing)
 	-   [Deployment](https://github.com/SamarZiadat/oishii-ramen#deployment)
-	    -   [Version Control](https://github.com/SamarZiadat/oishii-ramen#version-control)
-	    -   [Heroku Deployment](https://github.com/SamarZiadat/oishii-ramen#heroku-deployment)
-	    -   [Run Locally](https://github.com/SamarZiadat/oishii-ramen#run-locally)
-	    -   [Fork Project](https://github.com/SamarZiadat/oishii-ramen#fork-project)
 	-   [Credits](https://github.com/SamarZiadat/oishii-ramen#heroku-credits)
-	    -   [Content](https://github.com/SamarZiadat/oishii-ramen#content)
-	    -   [Acknowledgements](https://github.com/SamarZiadat/oishii-ramen#acknowledgements)
 
 ## User Experience Design (UX)
 
@@ -253,9 +244,9 @@ Features which could be implemented in the future:
 	
 	Currently there is no logic to check whether a reviewer of a course has actually taken the course. Developing a method to check this and then label the reviewer/their review with a 'Verified Student' label would an option.
     
-### Design
+## The Skeleton Plane
 
-#### Wireframes
+### Wireframes
 
 At the beginning of this project and as a part of the planning process, wireframes were created using Balsamiq. The wireframes were used to get a basic idea of how the site might look when finished, both on desktop and mobile devices.
 
@@ -270,7 +261,9 @@ Wireframes were created for the following pages and features:
 - **Booking page:**
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-booking.png?raw=true)
 
-#### Entity-Relationship diagram for DBMS
+### Database Design
+
+**Entity-Relationship diagram for DBMS**
 
 Notes on the ER diagram:  
 -   The ER diagram provided shows the logical data model. 
@@ -278,7 +271,9 @@ Notes on the ER diagram:
 
 ![DBMS diagram](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/dbms-diagram.png?raw=true)
 
-#### Brand Board
+## The Surface Plane
+
+### Design 
 
 A brand board was created for this project:
 
