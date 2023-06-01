@@ -22,7 +22,6 @@ Staff at oishii ramen can use the admin login of the website to draft and publis
 	-   [The Skeleton Plane](https://github.com/SamarZiadat/oishii-ramen#the-skeleton-plane)
 	    -   [Wireframes](https://github.com/SamarZiadat/oishii-ramen#wireframes)
 	    -   [Database Design](https://github.com/SamarZiadat/oishii-ramen#database-design)
-	    -   [Security](https://github.com/SamarZiadat/oishii-ramen#security)
 	-   [The Surface Plane](https://github.com/SamarZiadat/oishii-ramen#the-surface-plane)
 	    -   [Design](https://github.com/SamarZiadat/oishii-ramen#design)
 	        -   [Colour Scheme](https://github.com/SamarZiadat/oishii-ramen#colour-scheme)
@@ -121,7 +120,7 @@ Further down on the landing page is a list of course summaries. Each summary inc
 
 **F04 Course Detail Page**
 
-When a user clicks on a course summary title on the landing page they are brought to the Course Detail page for the clicked hike. Here the user is shown a full description of the course and all of the approved reviews for the course which are listed in order most recent first. Only users who are signed in can review a course or book a timetabled course. Staff (admin) users are the only users who can delete or edit a course.
+When a user clicks on a course summary title on the landing page they are brought to the Course Detail page for the clicked course. Here the user is shown a full description of the course and all of the approved reviews for the course which are listed in order most recent first. Only users who are signed in can review a course or book a timetabled course. Staff (admin) users are the only users who can delete or edit a course.
 
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-course-detail.png?raw=true)
 
@@ -139,12 +138,6 @@ All comments approved for a course are shown on that course's Course Detail page
 **F06 Book a Course**
 
 In order to book a course a user must be signed in. A course can be booked from its Course Detail page. The user selects a course date/time from the drop-down list of scheduled courses and can choose a number 1 to 5 to indicate how many people they want included on their booking. Then the user clicks on the Book button to complete the booking and get re-directed to their Bookings page to see all of their upcoming and past bookings.
-
-The list of timetabled hikes drop-down on the Hike Detail page will only show hikes in the future, not any with dates in the past. If no future dates/times are timetabled for a hike then the list is empty and the Book button is deactivated.
-
-All of the users booked courses will appear on their Bookings page - even if not yet confirmed/approved - this allows the user to see if their booking request has been accepted or not. Bookings need to be confirmed by admin to ensure that a hike is not over booked.
-
-To approve bookings the staff (admin) user logs in to the admin pages, opens the Bookings table, selects the booking(s) to be approved, chooses the 'Approve bookings' action from the drop-down menu and clicks 'Go'. Alternatively, they can be approved one at a time by clicking on the booking row to open it, updating the value in the approved field and saving the update.
 
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-course-review-and-booking.png?raw=true)
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-admin-approve-booking.png?raw=true)
@@ -180,7 +173,7 @@ When they click the 'Confirm' button, the course is added, they are redirected t
 
 **F10 Bookings Page**
 
-In order to access the Bookings page a user must be signed in. The Bookings page provides a convenient place for the user to quickly view their upcoming and past bookings. By clicking on the image associated with the booking the user can go to the Course Detail page for the hike. The booking also shows the number of people the booking is for and whether or not the booking has been confirmed/approved.
+In order to access the Bookings page a user must be signed in. The Bookings page provides a convenient place for the user to quickly view their upcoming and past bookings. By clicking on the image associated with the booking the user can go to the Course Detail page for the course. The booking also shows the number of people the booking is for and whether or not the booking has been confirmed/approved.
 
 If the logged in user is a staff (admin) user, then they have permissions to view all booking made by all users in one easy location. This allows staff to have a quick overview of all the bookings that have been made, and which bookings they still need to approve.
 
@@ -270,8 +263,10 @@ Wireframes were created for the following pages and features:
 
 - **Home page:**
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-home.png?raw=true)
+
 - **Course Detail page:**
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-course-detail.png?raw=true)
+
 - **Booking page:**
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-booking.png?raw=true)
 
@@ -427,67 +422,315 @@ PEP 8 Online linter (Python validator). The code passed without any errors on al
 -   The Django's test reporting tool '[Coverage](https://coverage.readthedocs.io/en/7.2.7/)' was installed to show the percentage of Python code that’s been covered by tests:
 ![enter image description here](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/coverage-django-testing.png?raw=true)
 
+### User Stories Testing
+
+To further ensure this application is working correctly and functions as expected, manual testing was also performed. User Stories were tested successfully to verify that all acceptance criteria was met by the application features.
+
+- **US01: Illustrate purpose of application through UI**
+
+	As a  **Site User**  I can  **view the home page**  so that  **clearly understand the application purpose**
+	
+	- Acceptance Criteria:**
+		-   Suitable graphics on screen
+		-   Text on screen briefly introducing the application purpose
+		-   Navigation items on screen clearly labelled with their function
+
+	- I have tested:
+		-   That suitable images were used throughout the website
+		-   That the text on landing page suitably introduces the application purpose
+		-   That the navbar nav-items were clearly labelled with their function
+
+- **US02: Navigate**
+
+	As a  **Site User**  I can  **use the navigation bar**  so that **I can easily easily navigate the application **
+	- Acceptance Critera:
+		-   Navigation menu available at the top of each screen with either the items listed across the screen or accessible via a "hamburger" menu on smaller screen sizes.
+		-   Consistent menu style across each of the pages available to the site user
+		-   Clear indication on screen of the page/function the user is currently accessing
+		
+	- I have tested:
+		-   That the navbar is available at the top of each screen with either the items listed across the screen or accessible via a "hamburger" menu on smaller screen sizes
+		-   That navigation.html is loaded in the base.html, and that all pages extend base.html, so menu is consistent in style and function on every page
+		-   All pages have a clear page title that describes the page function the user is currently accessing
+
+- **US03: View Courses**
+
+	As a  **Site User**  I can  **view the courses available**  so that  **I can explore them in more detail**
+
+	- Acceptance Criteria:
+		-   all published courses can be viewed
+		-   Image, title, skill level, date and start time shown on screen for each course
+
+	- I have tested:
+		- That all published courses can be viewed on landing summaries and on course detail pages
+		-  That image, title, skill level are visible on landing page and course detail page, and that date and start time are shown on booking portal
+
+-   **US04: View course information**
+
+	As a  **Site User**  I can  **click on a course**  so that  **I can learn more about it**
+	- Acceptance Criteria:
+		-  As a Site User I can click on a course so that I can view its full details
+
+	- I have tested:
+		-  I have tests that when course title is clicked on landing page course summaries, the correct course detail page is loaded 
+
+-   **US05: Book a course**
+
+	As a  **Site User**  I can  **book a timetabled course**  so that  **I can reserve places for myself and those accompanying me**
+	- Acceptance Criteria:
+		-   user must be registered and logged in to reserve a place on a course
+		-   user can select a date for the course
+		-   user can reserve multiple places on the course up a max of 5
+		
+	- I have tested:
+		-   That the booking portal on the course detail page is only visible to registered users who are logged in 
+		-   That users can select a date for the course on the booking portal
+		-   That users can reserve multiple places on the course (up a max of 5) on the booking portal
+	
+-   **US06: View my booked courses**
+
+	As a  **Site User**  I can  **access a list of courses I have booked on to**  so that  **I can see the upcoming courses I have booked to attend**
+	- Acceptance Criteria:
+		-   User must be registered and logged in to view their bookings
+		-   User can only access their own bookings
+		-   Bookings are listed in course date order - soonest at the top of the list
+		-   Functionality to cancel a course booking is accessible
+
+	- I have tested:
+		-   That only registered users who are logged in can gain access to the booking page and the booking link in the navbar
+		-   That, apart from staff (admin) users, logged in users can only access their own bookings 
+		-   That bookings are listed in course date order on the booking page, with soonest at the top of the list
+		-   That users can cancel a course booking easily via the booking page
+	
+-   **US07: Cancel a booking**
+
+	As a  **Site User**  I can  **cancel an upcoming course I have booked onto**  so that  **my place can be reserved by someone else**
+	- Acceptance Criteria:
+		- User must be registered and logged in to cancel a booking
+		-   Users can only cancel bookings they have made themselves
+
+	- I have tested:
+		- That only  registered and logged in users have access to the booking portal (and the cancel booking button in turn)
+		-   That (non-admin) users can only see their own bookings on their book page, and so can only cancel those bookings
+	
+-   **US08: Review a course**
+
+	As a  **Site User**  I can  **attach a review to a course**  so that  **I can give feedback and be involved in the community of attendees**
+	- Acceptance Criteria:
+		-  User must be registered and logged in to submit a review
+		-   Submitted reviews must be approved by the Site Admin user before they are visible to other users
+	
+	- I have tested:
+		-  That only registered and logged in users can access the review post form
+		-   That all submitted reviews are available to approve in the Django admin portal (which is only accessible to logged in staff/admin users)
+	
+-   **US09: View reviews**
+
+	As a  **Site User**  I can  **view reviews on individual courses**  so that  **I can make an informed decision on whether I would like to attend this course**
+	    	
+	- Acceptance Criteria:
+		- Approved reviews to be visible on the course detailed information page
+
+	- I have tested:
+		- That all approved reviews are visible on the course detail page by referencing and comparing those reviews to the approved reviews on the Django admin pages
+    	
+-   **US10: Approve reviews**
+
+	As a  **Site Admin**  I can  **assess and then approve or disapprove reviews**  so that  **inappropriate content can be filtered out**
+	- Acceptance Criteria:
+		-   Site Admin can select one or more reviews to approve from the admin page
+		-   Reviews can only be approved by the Site Admin
+
+	- I have tested:
+		-   Staff (admin) users can select one or more reviews to approve on the Django admin page
+		-   That only staff (admin) users can gain access to the Django admin pages
+	
+-   **US11: Account registration and login**
+
+	As a  **Site User**  I can  **register for an account**  so that  **I can log in and then book a course, , view my upcoming and past bookings, and leave reviews on courses**
+	- Acceptance Criteria:
+		-   to register, a user must enter a username and password (email is optional)
+		-   user should not be able to register the same username or email address more than once
+		-   user should not be able to login unless they have completed the registration step
+
+	- I have tested:
+		-  That users only sign up for an account on sign up form if they have entered a username and password
+		-   That users can't use the sign up form to sign up with the same username or email address more than once 
+		-   That only user information used to successfully sign in can be used for successful log in
+	
+-   **US12: Manage courses**
+
+	As a  **Site Admin**  I can  **create, read, update and delete courses and their timetables**  so that  **I can manage course details and availability**
+	- Acceptance Criteria:
+		-   Admin user can create a new course from the admin site page - adding all relevant course information - image, description, slug etc.
+		-   Admin user can modify data for an existing course.
+		-   Once saved and "published" new courses or updates to courses become visible to general site users.
+		-   Deleting a course causes all linked reviews, timetables and booking information to also be deleted
+    
+    - I have tested:
+		-   That staff (admin) users can add a new course from the Django admin page and from the 'add course' link on the navbar 
+		-   That staff (admin) users can edit course information from the Django admin page and the course detail page via website front-end
+		-   That once added/saved and "published" new courses or updates to courses become visible to all users on the landing page and course detail page
+		-   That staff (admin) users can delete courses from the Django admin page and the course detail page. Once courses are deleted I have tested that this causes all linked reviews, timetables and booking information to also be deleted
+
+-   **US13: Create course drafts**
+
+	As a  **Site Admin**  I can  **create drafts for courses**  so that  **I can finish producing the content at a later date and publish once approved**
+	- Acceptance Criteria:
+    	- Site Admin should be able to create and edit a course then select it's state as "draft" or "published"
+		-   Only "published" courses should be visible to general users.
+    
+    - I have tested:
+	    - That staff (admin) users can set created and edited courses to either "draft" or "published"
+		-   That only "published" courses are visible to users on landing page
+    	
+-   **US14 Approve bookings**
+
+	As a  **Site Admin**  I can  **view and then approve or disapprove bookings**  so that  **course capacity can be managed**
+    - Acceptance Criteria:
+    	-   Site Admin can select one or more bookings to approve from the admin page
+		-   Bookings can only be approved by the Site Admin
+    
+    - I have tested:
+		-   That staff (admin) users can select one or more bookings to approve from the Django admin pages
+		-   That the Django admin pages can only be access by staff (admin) users
+
+-   **US15 View past courses**
+
+	As a  **Site User**  I can  **access a list of past courses that I booked**  so that  **I can track courses I have completed**
+	- Acceptance Criteria:
+		-   User must be registered and logged in to view their past bookings
+		-   User can only access their own bookings
+		-   Bookings are listed in course date order - most recent at the top of the list
+		-   Courses in the past cannot be cancelled
+
+	- I have tested:
+		- 	That users can only gain access to the booking page and booking link in the navbar when they are registered and logged in
+		-   That non-staff users can only access their own bookings on the Booking page 
+		-   That bookings on the Booking page are listed in course date order - most recent at the top of the list
+		-   That past courses on the Bookings page do not have the functionality of a cancel button
+
 ### Known bugs
 - Currently no known bugs.
 
+
 ## Deployment
 
-### Version Control
+Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application. Code Institute also provides a summary of similar process steps here :  [CI Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
 
-The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘oishii-ramen’.
+1.  How to Clone the Repository
+2. Create a new PostgreSQL database instance on ElephantSQL
+3.  Create Application on Heroku
+4.  Configure Cloudinary to host images used by the application
+5.  Connect the Heroku app to the GitHub repository
+6.  Executing automated tests
+7.  Final Deployment steps
 
-The following git commands were used throughout development to push code to the remote repo:
+### How to Clone the Repository
 
-`git add <file>`  - This command was used to add the file(s) to the staging area before they are committed.
-
-`git commit -m “commit message”`  - This command was used to commit changes to the local repository queue ready for the final step.
-
-`git push`  - This command was used to push all committed code to the remote repository on github.
-
-### Heroku Deployment
-
-The site was deployed to Heroku. The steps to deploy are as follows:
-
--   Navigate to heroku and create an account
--   Click the new button in the top right corner
--   Select create new app
--   Enter app name
--   Select region and click create app
--   Click the resources tab and search for Heroku Postgres
--   Select hobby dev and continue
--   Go to the settings tab and then click reveal config vars
--   Add the following config vars:
-    -   SECRET_KEY: (Your secret key)
-    -   DATABASE_URL: (This should already exist with add on of postgres)
-    -   EMAIL_HOST_USER: (email address)
-    -   EMAIL_HOST_PASS: (email app password)
-    -   CLOUNDINARY_URL: (cloudinary api url)
--   Click the deploy tab
--   Scroll down to Connect to GitHub and sign in / authorize when prompted
--   In the search box, find the repositoy you want to deploy and click connect
--   Scroll down to Manual deploy and choose the main branch
--   Click deploy
-
-The app should now be deployed.
-
-### Run Locally
-
-Navigate to the GitHub Repository you want to clone to use locally:
-
--   Click on the code drop down button
--   Click on HTTPS
--   Copy the repository link to the clipboard
--   Open your IDE of choice (git must be installed for the next steps)
--   Type git clone copied-git-url into the IDE terminal
-
-The project will now have been cloned on your local machine for use.
-
-### Fork Project
-
-Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
-
--   Navigate to the GitHub Repository you want to fork.
+-   Go to the [https://github.com/SamarZiadat/oishii-ramen](https://github.com/SamarZiadat/oishii-ramen)  repository on GitHub
     
--   On the top right of the page under the header, click the fork button.
+-   Click the "Code" button to the right of the screen, click HTTPs and copy the link there
     
--   This will create a duplicate of the full project in your GitHub Repository.
+-   Open a GitBash terminal and navigate to the directory where you want to locate the clone
+    
+-   On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+    
+-   To install the packages required by the application use the command : pip install -r requirements.txt
+    
+-   When developing and running the application locally set DEBUG=True in the settings.py file
+    
+-   Changes made to the local clone can be pushed back to the repository using the following commands :
+    
+    -   git add  _filenames_  (or "." to add all changed files)
+    -   git commit -m  _"text message describing changes"_
+    -   git push
+-   N.B. Any changes pushed to the master branch will take effect on the live project once the application is re-deployed from Heroku
+    
+### Create a new PostgreSQL database instance on ElephantSQL
+
+- Log in to [ElephantSQL.com](https://www.elephantsql.com/) to access your dashboard
+- Click “Create New Instance”
+- Set up your plan
+- Give your plan a  Name  (this is commonly the name of the project)
+    -   Select the  Tiny Turtle (Free)  plan
+    -   You can leave the  Tags  field blank
+- Select “Select Region”
+- Select a data center near you
+	- If you receive a message saying "Error: No cluster available in your-chosen-data-center  yet", choose another region.  Note:  You're free to use any of the available free data centers, be it AWS, Azure or any of the other providers.
+- Then click “Review”
+- Check your details are correct and then click “Create instance”
+- Return to the ElephantSQL dashboard and click on the  database instance name  for this project
+- In the URL section, click the copy icon to copy the database URL
+
+### Create Application on Heroku
+
+-   Log in to Heroku at  [https://heroku.com](https://heroku.com/)  - create an account if needed.
+-   From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+-   On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+-   Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - add the url from ElephantSQL to DATABASE_URL 
+-   Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
+-   Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
+-   The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
+    -   DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    -   SECRET_KEY = os.environ.get('SECRET_KEY')
+-   In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
+-   Make sure the project requirements.txt file is up to date with all necessary supporting files by entering the command : pip3 freeze --local > requirements.txt
+-   Commit and push any local changes to GitHub.
+-   In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
+
+### Configure Cloudinary to host static files used by the application
+
+-   Log in to Cloudinary - create an account if needed. To create the account provide your name, email and set up a password. For "primary interest" you can choose "Programmable Media for image and video API". Click "Create Account" and you will be sent an email to verify your account and bring you to the dashboard.
+-   From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
+-   Log in to Heroku and go to the Application Configuration page for the application. Click on Settings and click on the "Reveal Config Vars" button.
+-   Add a new Config Var called CLOUDINARY_URL and assign it the value copied from the Cloudinary dashboard, but remove the "CLOUDINARY_URL=" at the beginning of the string.
+-   In order to be able to run the application on localhost, also add the CLOUDINARY_URL environment variable and value to env.py
+
+### Connect the Heroku app to the GitHub repository
+
+-   Go to the Application Configuration page for the application on Heroku and click on the Deploy tab.
+-   Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository and click on Connect to link up the Heroku app to the GitHub repository code.
+-   Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
+-   The application can be run from the Application Configuration page by clicking on the Open App button.
+
+### Executing automated tests
+
+-   The existing automated jquery/javascript test can be executed using jest as follows :
+    -   If jest is not installed then run the command : npm install --save-dev jest
+    -   Run the js test file using the command : npm test
+-   The existing automated django/python tests are executed using unittest as follows :
+    -   Run the python tests using the command : python3 manage.py test
+    -   To run just a subset of the tests, then append the application and test file name to the command, e.g. : python3 manage.py test booking.test_models
+-   Test coverage for the django/python tests can be reviewed using the coverage tool :
+    -   If coverage is not installed then run the command : pip3 install coverage
+    -   Execute the following series of commands to determine test coverage :
+        -   coverage run --source=booking manage.py test
+        -   coverage report
+
+### Final Deployment steps
+
+Once code changes have been completed and tested on localhost, the application can be prepared for Heroku deployment as follows :
+
+-   Set DEBUG flag to False in settings.py
+-   Ensure this line exists in settings.py to make summernote work on the deployed environment (CORS security feature): X_FRAME_OPTIONS = 'SAMEORIGIN'
+-   Ensure requirements.txt is up to date using the command : pip3 freeze --local > requirements.txt
+-   Push files to GitHub
+-   In the Heroku Config Vars for the application delete this environment variable : DISABLE_COLLECTSTATIC
+-   On the Heroku dashboard go to the Deploy tab for the application and click on deploy branch
+
+## Credits
+
+-   [Balsamiq:](https://balsamiq.com/)  Used to create the wireframes.
+-   [Bootstrap documentation:](https://getbootstrap.com/docs/5.3/getting-started/introduction/)  Bootstrap documentation used for styling and to build responsive web pages.
+-   [Code Institute:](https://codeinstitute.net/)  Walkthrough modules in Full Stack Frameworks.
+-   [Code Institute Slack Community:](https://app.slack.com/)  Slack community for troubleshooting and FAQ.
+-   [Code Institute Tutor Support:](https://app.slack.com/)  For help and support.
+-   [Django documentation:](https://docs.djangoproject.com/en/4.1/)  Everything you need to know about Django.
+-   [Jest Docs:](https://jestjs.io/docs/getting-started)  For JavaScript testing.
+-   [Stack Overflow:](https://stackoverflow.com/)  For troubleshooting and FAQ.
+-   [W3Schools:](https://www.w3schools.com/)  Online Web Tutorials.
+
+### Acknowledgements
+
+-   My mentor at Code Institute Brian Macharia for code review, help and feedback. Very much appreciated!
