@@ -92,6 +92,151 @@ Acceptance criteria was created in relation to each of the user stories. These s
 - Ability to perform CRUD functionality on reservations
 -   Restricted role based features
 
+### The Structure Plane
+
+#### Features
+
+**F01 Navigation Bar**
+    
+ The navigation bar has a consistent look and placement each page supporting easy and intuitive navigation. It includes a Logo and links. If the user is not signed in then links available are the Home, Sign up and Sign in pages. If a user is signed in then the links available are the Home, Bookings and Sign out pages. If a staff (admin) user is signed in, the links available are all links available to a user with the addition of the Add Course link.
+    
+The navigation bar is responsive on multiple screen sizes - on smaller screens it coverts to a 'burger' menu style. When a user is logged in, they are notified which account they are signed in with by their name appearing in the navigation bar.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-default-nav.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-admin-nav.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-useracc-nav.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-hamburger-nav.png?raw=true)
+
+**F02 Landing page image and text**
+
+At the top of the landing page (Home page) there is an area that includes a photograph and a text overlay which together clearly identify the purpose of the site as a place to find and book Japanese culinary courses in Glasgow, Scotland. There is also a call-to-action button that directs the user to the Sign Up page. 
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-landing-image.png?raw=true)
+
+**F03 Course Summaries**
+
+Further down on the landing page is a list of course summaries. Each summary includes an image, the course title, details on cost and course duration, and easy to read badges outlining the skill-level requirements for the course - beginner/intermediate/advanced. At a glance the user can decide quickly if this is a course that might appeal to them and be suitable to them. To keep the page uncluttered, summaries are limited to a maximum of 6 per page, with pagination available when more than 6 courses exist.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-landing-summaries.png?raw=true)
+
+**F04 Course Detail Page**
+
+When a user clicks on a course summary title on the landing page they are brought to the Course Detail page for the clicked hike. Here the user is shown a full description of the course and all of the approved reviews for the course which are listed in order most recent first. Only users who are signed in can review a course or book a timetabled course. Staff (admin) users are the only users who can delete or edit a course.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-course-detail.png?raw=true)
+
+**F05 Review a Course**
+
+In order to review a course a user must be signed in. A review can be added on any Course Detail page. The user enters their review in a text box and clicks on a button to submit. The review must be approved by a staff (admin) user before it will be visible on the Course Detail page.
+
+To approve reviews the admin user logs in to the admin pages, opens the Reviews table, selects the review(s) to be approved, chooses the 'Approve reviews' action from the drop-down menu and clicks 'Go'. Alternatively, they can be approved one at a time by clicking on the review row to open it, updating the value in the approved field and saving the update.
+
+All comments approved for a course are shown on that course's Course Detail page in the order of newest first.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-course-review-and-booking.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-admin-review.png?raw=true)
+
+**F06 Book a Course**
+
+In order to book a course a user must be signed in. A course can be booked from its Course Detail page. The user selects a course date/time from the drop-down list of scheduled courses and can choose a number 1 to 5 to indicate how many people they want included on their booking. Then the user clicks on the Book button to complete the booking and get re-directed to their Bookings page to see all of their upcoming and past bookings.
+
+The list of timetabled hikes drop-down on the Hike Detail page will only show hikes in the future, not any with dates in the past. If no future dates/times are timetabled for a hike then the list is empty and the Book button is deactivated.
+
+All of the users booked courses will appear on their Bookings page - even if not yet confirmed/approved - this allows the user to see if their booking request has been accepted or not. Bookings need to be confirmed by admin to ensure that a hike is not over booked.
+
+To approve bookings the staff (admin) user logs in to the admin pages, opens the Bookings table, selects the booking(s) to be approved, chooses the 'Approve bookings' action from the drop-down menu and clicks 'Go'. Alternatively, they can be approved one at a time by clicking on the booking row to open it, updating the value in the approved field and saving the update.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-course-review-and-booking.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-admin-approve-booking.png?raw=true)
+
+**F07 Edit a Course**
+
+In order to edit a course a user must be signed in and that user must be a staff (admin) user. A course can be edited from its Course Detail page. The staff user selects the 'Edit Course' link, which directs them to the 'Edit Course' page (the 'Edit Course' link and page can only be viewed by staff users). 
+
+On the 'Edit Course' page, the staff user is given the option to edit any information about the course via a form. If they decide not to edit the course, they can click the 'Cancel' button, which redirects them back to the Course detail page. If they do decide to make changes and are happy with their changes, they can click the 'Confirm' button. When they click the 'Confirm' button, the edits save, they are redirected to the updated Course Detail page, and a success message appears as an alert confirming that changes were made.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-edit-delete-course.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-edit-course.png?raw=true)
+
+**F08 Delete a Course**
+
+In order to delete a course a user must be signed in and that user must be a staff (admin) user. A course can be deleted from its Course Detail page. The staff user selects the 'Delete Course' link, which directs them to the 'Delete Course Confirm' page (the 'Delete Course' link and page can only be viewed by staff users). 
+
+On the 'Delete Course Confirm' page, the staff user provided with a form that asks them to confirm if they would like to delete the course. If they confirm by clicking the 'Delete' button, the course deletes, they are redirected to the landing page, and a success message appears as an alert confirming the deletion.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-edit-delete-course.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-confirm-deletion.png?raw=true)
+
+**F09 Add a Course**
+
+In order to add a course a user must be signed in and that user must be a staff (admin) user. A course can be added from any page on the website. In order to add a course, the staff user selects the 'Add Course' link from the navigation bar, which directs them to the 'Add Course' page (the 'Add Course' link and page can only be viewed by staff users). 
+
+On the 'Add Course' page, the staff user is provided with a form to add all necessary information about the course. If they decide not to add a course, they can click the 'Cancel' button, which redirects them back to the landing page. If they do decide to add a course and fill in all required fields, they can click the 'Confirm' button. 
+
+When they click the 'Confirm' button, the course is added, they are redirected to the landing page, and a success message appears as an alert confirming that the course was added. This course is added a draft course, and so will not appear on the landing page until it is 'published' via the Django admin pages.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-add-course.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-publish-course.png?raw=true)
+
+**F10 Bookings Page**
+
+In order to access the Bookings page a user must be signed in. The Bookings page provides a convenient place for the user to quickly view their upcoming and past bookings. By clicking on the image associated with the booking the user can go to the Course Detail page for the hike. The booking also shows the number of people the booking is for and whether or not the booking has been confirmed/approved.
+
+If the logged in user is a staff (admin) user, then they have permissions to view all booking made by all users in one easy location. This allows staff to have a quick overview of all the bookings that have been made, and which bookings they still need to approve.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-bookings-page.png?raw=true)
+
+**F11 Cancel a Course Booking**
+
+The Booking page can only be viewed by logged in users. In order for a user to cancel a course booking that they made, the user that booked the course must be signed in. They can view the course booking on the Bookings page and cancel by clicking on the 'Cancel' button associated with the booking. The user will be prompted to confirm that they really want to cancel, to prevent them accidentally deleting their booking. Bookings with a timetabled date set in the past cannot be cancelled.
+
+If a staff (admin) user would like to cancel a booking made by any user, they must be first signed in as a staff user. They can view all course bookings made by all users on the Bookings page and cancel by clicking on the 'Cancel' button associated with the booking. They will be prompted to confirm in the same way as outlined above, and also cannot cancel bookings that have a timetabled date set in the past.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-cancel-booking.png?raw=true)
+
+**F12 User authentication**
+
+The application provides the following user authentication related functions :
+
+-   User Sign up
+    
+    -   A user needs to be registered before they can sign in. The option to 'Sign up' appears on the navigation bar when no user is currently signed in. To sign up, the user needs to provide a) a username which has not already been registered, b) an optional email address and c) a password which they must enter. Once registered a user can sign in.
+    
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-signup.png?raw=true)
+
+- User Sign in
+	-   Once registered a user can sign in. To sign in the user must provide a) a registered username and b) the password for the username. Once signed in they will have access to extra functionality, namely :
+	    -   can review a course
+	    -   can book courses
+	    -   can cancel courses
+	    
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-signin.png?raw=true)
+
+- User Sign out
+	-   A signed in user can Sign out by clicking on the 'Sign out' link on the navigation bar. The user simply needs to confirm the action by clicking on the Sign out button on the page.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-signout.png?raw=true)
+
+**F13 Add a Timetable for a Course**
+
+The admin user adds timetables for courses by using Django admin pages. To add a new date/time for a course the admin user can use the '+ Add' link for the Timetable table. To fill in the data fields a course needs to be selected from the drop-down list of existing courses and a date and time needs to be specified.
+
+Once a new timetable for a course is added it becomes available for booking on that course's Course Detail page (as long as the date/time assigned to the course is not in the past).
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-add-timetable.png?raw=true)
+
+**F14 On-screen Messages**
+
+To enhance usability of the application, user messages appear on-screen to confirm when certain actions have happened or report on problems. For successful operations, a message will appear at the top of the screen and then fade-out/slide-up after 5 seconds.
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-messages.png?raw=true)
+
+**F15 Footer**
+
+The Footer is present on all pages of the website, featured at the bottom. On the left-hand side there a greyscale version of the logo, in the middle are the business' contact details and address, and to the right are the business' social media links. 
+
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-footer.png?raw=true)
+
 ### Design
 
 #### Wireframes
