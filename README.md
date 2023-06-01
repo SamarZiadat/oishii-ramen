@@ -237,6 +237,29 @@ The Footer is present on all pages of the website, featured at the bottom. On th
 
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-footer.png?raw=true)
 
+#### Future Features
+Features which could be implemented in the future:
+
+-   **Develop custom JavaScript modals**
+    
+    Dialogs that ask users to confirm their actions, such as confirming that they would like to sign out or delete a booking, are currently very basic and could be improved to have a modal format consistent with the application's UI.
+    
+-   **Improve UI with intuitive timetable calendar**
+    
+    Ideally the selection of booking dates and times would use a more sophisticated and intuitive visual calendar with available days and times selectable and colour-coded.
+    
+-   **Add course capacity handling functionality**
+
+    Ensuring that bookings do not exceed capacity is currently handled by requiring that the staff (admin) user to approve bookings via the Django admin. This could be improved by including a capacity limit field in the timetable table and adding logic to calculate remaining spaces available as part of data validation on booking.
+    
+-   **Continue to build custom front-end for admin functionality**
+
+    The overall look and feel of the Django admin pages is not consistent with the rest of the app. Reliance on Django admin pages could be eliminated with continued work on front-end and crud for staff (admin) users.
+
+- **Introduce verified reviews**
+	
+	Currently there is no logic to check whether a reviewer of a course has actually taken the course. Developing a method to check this and then label the reviewer/their review with a 'Verified Student' label would an option.
+
 ### Design
 
 #### Wireframes
