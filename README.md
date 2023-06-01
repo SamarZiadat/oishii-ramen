@@ -89,7 +89,7 @@ Acceptance criteria was created in relation to each of the user stories. These s
 -   Home page with app information
 -   Responsive Design - the app should be fully functional on all devices from 320px up
 -   Hamburger menu for devices with a smaller viewport devices
-- Ability to perform CRUD functionality on reservations
+- Ability to perform CRUD functionality
 -   Restricted role based features
 
 ### The Structure Plane
@@ -103,8 +103,8 @@ Acceptance criteria was created in relation to each of the user stories. These s
 The navigation bar is responsive on multiple screen sizes - on smaller screens it coverts to a 'burger' menu style. When a user is logged in, they are notified which account they are signed in with by their name appearing in the navigation bar.
 
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-default-nav.png?raw=true)
-![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-admin-nav.png?raw=true)
-![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-useracc-nav.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-nav-user.png?raw=true)
+![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-nav-admin.png?raw=true)
 ![Feature image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/features/feature-hamburger-nav.png?raw=true)
 
 **F02 Landing page image and text**
@@ -259,7 +259,7 @@ Features which could be implemented in the future:
 - **Introduce verified reviews**
 	
 	Currently there is no logic to check whether a reviewer of a course has actually taken the course. Developing a method to check this and then label the reviewer/their review with a 'Verified Student' label would an option.
-
+    
 ### Design
 
 #### Wireframes
@@ -272,10 +272,23 @@ Notes on the ER diagram:
 
 ![DBMS diagram](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/dbms-diagram.png?raw=true)
 
-#### Logo
-I used logo.com to generate a logo for
-#### Colour Scheme
-#### Typography
+#### Brand Board
+
+A brand board was created for this project:
+
+![Brand Board](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/brand-board.png?raw=true)
+
+- **Colour Scheme**
+The colour scheme for was chosen with Japanese culture in mind, as this app is built for booking Japanese culinary courses. The colour scheme was also chosen with a focus on accessibility and contrast. The colours of red and white were decided on, and then the exact hex colours and colour scheme were created by the https://coolors.co/ colour scheme generator.
+
+- **Logo**
+The logo was created with the [logo.com](https://logo.com/) logo generator. I selected the typography, colour scheme, and icon, and then the generator created variations of this logo, which were used through the website and as the favicon.
+
+- **Typography**
+Carter One Regular was used as the logo font, as it both fit the theme for the business and was clearly legible but interesting. Cantarell was imported from [Google Fonts](https://fonts.google.com/specimen/Cantarell/about) as the website's main font, as it is both a highly legible font. I also found that Cantarell is similar to, but more intriguing than, sans-serif (the backup font for the website).
+
+- **Imagery**
+The images chosen for the website were sourced from free stock image provider Pexels, with a heavy dependence on a collection by [Katerina Holmes](https://www.pexels.com/@katerina-holmes/). Images from this collection, and any other images from Pexels, were chosen for their fresh but muted quality and the subject matter of the app.
 
 ## Technologies
 
@@ -397,6 +410,9 @@ PEP 8 Online linter (Python validator). The code passed without any errors on al
 -   The Django's test reporting tool '[Coverage](https://coverage.readthedocs.io/en/7.2.7/)' was installed to show the percentage of Python code that’s been covered by tests:
 ![enter image description here](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/coverage-django-testing.png?raw=true)
 
+### Known bugs
+- Currently no known bugs.
+
 ## Deployment
 
 ### Version Control
@@ -458,4 +474,3 @@ Most commonly, forks are used to either propose changes to someone else's projec
 -   On the top right of the page under the header, click the fork button.
     
 -   This will create a duplicate of the full project in your GitHub Repository.
-   
