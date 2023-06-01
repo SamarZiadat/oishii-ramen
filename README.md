@@ -252,13 +252,16 @@ At the beginning of this project and as a part of the planning process, wirefram
 
 Wireframes were created for the following pages and features:
 
-- **Home page:**
+**Home page:**
+
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-home.png?raw=true)
 
-- **Course Detail page:**
+**Course Detail page:**
+
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-course-detail.png?raw=true)
 
-- **Booking page:**
+**Booking page:**
+
 ![Wireframe](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/wireframe-booking.png?raw=true)
 
 ### Database Design
@@ -624,19 +627,12 @@ Detailed below are instructions on how to clone this project repository and the 
 ### How to Clone the Repository
 
 -   Go to the [https://github.com/SamarZiadat/oishii-ramen](https://github.com/SamarZiadat/oishii-ramen)  repository on GitHub
-    
 -   Click the "Code" button to the right of the screen, click HTTPs and copy the link there
-    
 -   Open a GitBash terminal and navigate to the directory where you want to locate the clone
-    
 -   On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
-    
 -   To install the packages required by the application use the command : pip install -r requirements.txt
-    
 -   When developing and running the application locally set DEBUG=True in the settings.py file
-    
 -   Changes made to the local clone can be pushed back to the repository using the following commands :
-    
     -   git add  _filenames_  (or "." to add all changed files)
     -   git commit -m  _"text message describing changes"_
     -   git push
