@@ -49,7 +49,7 @@ This project was managed using agile methodologies by delivering small features 
 
 Acceptance criteria was created in relation to each of the user stories. These stories were then assigned to an epic, and prioritised with the labels 'must have', 'should have' or 'could have'. All stories were organised within sprints, and acceptance criteria was completed in order of: 'must have' , then 'should have', and finally "could have". This approach was taken in order to ensure that all core requirements were definitely delivered, with the nice to have features implemented in an iterative way according to capacity.
 
-[IMAGE OF KANBAN]
+![Image of Kanban](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/kanban.png?raw=true)
 
 #### User Stories
 
@@ -109,8 +109,55 @@ I used logo.com to generate a logo for
 #### Colour Scheme
 #### Typography
 
+## Technologies
+
+### Languages:
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JQuery](https://jquery.com/)
+-   [Python](https://www.python.org/)
+
+### Frameworks and Libraries:
+
+-   [Bootstrap:](https://getbootstrap.com/)  Bootstrap CSS Framework used for styling and to build responsive web pages.
+-   [Cloudinary:](https://cloudinary.com/)  Used to store all static files.
+-   [Coverage:](https://coverage.readthedocs.io/en/latest/index.html)  Used for measuring code coverage of Python test files.
+-   [Django:](https://www.djangoproject.com/)  Main Python framework used in the development.
+-   [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html)  Used for authentication and account registration.
+-   [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/)  Used to simplify the rendering of Django forms.
+-   [dj_database_url:](https://pypi.org/project/dj-database-url/)  Used to allow database urls to connect to the postgres database.
+-   [Gunicorn:](https://gunicorn.org/)  Green Unicorn, used as the Web Server to run Django on Heroku.
+-   [Jest:](https://jestjs.io/)  A JavaScript Testing Framework, used for automated tests.
+-  [jQuery library](https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js)  used to fade out alert messages
+-   [psycopg2:](https://pypi.org/project/psycopg2/)  Used PostgreSQL database adapter.
+- [pytest-black](https://pypi.org/project/pytest-black/): To enable automatic and continual format checking with black during development
+-   [Summernote:](https://github.com/summernote/django-summernote)  To provide a WYSIWYG editor for customizing new blog content and add images.
+
+### Software and Web Applications:
+
+-   [Balsamiq:](https://balsamiq.com/)  Used to create the wireframes.
+-   [Chrome DevTools:](https://developer.chrome.com/docs/devtools/)  Used to test the response on different screen sizes, debugging and to generate a Lighthouse report to analyze page load.
+- [dbdiagram.io](https://dbdiagram.io/home) : Used to create the Entity Relationship diagrams for the application data model
+-   [Font Awesome:](https://fontawesome.com/)  Used throughout the site to add icons for aesthetic and UX purposes.
+-   [Git:](https://git-scm.com/)  Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/)  GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
+-   [Google Fonts:](https://fonts.google.com/)  To import font which is used throughout the site. Added fallback font.
+- [Tech Sini](https://techsini.com/multi-mockup/): Used to generate the mockup of the final website on several apple devices.
+-   [Heroku:](https://www.heroku.com/)  For deployment and hosting of the application.
+-   [ElephantSQL:](https://www.elephantsql.com/): Configured and optimise the PostgreSQL database used for this application.
+-   [HTML Validator:](https://validator.w3.org/)  Check your code for HTML validation.
+-   [JSHint:](https://jshint.com/)  Check code for JavaScript validation.
+-   [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/)  Check your code for CSS validation.
 
 ## Testing
+
+### Browser Compatibility
+Chrome DevTools was used to test the responsiveness of the application on different screen sizes. In addition, testing has been carried out on the following browsers:
+-   Chrome Version 107.0.5304.87
+-   Edge Version 107.0.1418.24
+-   Firefox Version 94.0.1
+-   Safari on macOS (Safari Version 15.6)
 
 ### Validator Testing
 - [HTML Validator](https://validator.w3.org/):
@@ -142,46 +189,46 @@ JSHint was used to validate the JavaScript with no errors highlighted.
 - [PEP 8 Python Linter](https://pep8ci.herokuapp.com/):
 PEP 8 Online linter (Python validator). The code passed without any errors on all files tested:
 
-- Project settings.py result summary:
+	- Project settings.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-settings.png?raw=true)
-- Project urls.py result summary:
+	- Project urls.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-orurls.png?raw=true)
-- Application urls.py result summary:
+	- Application urls.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-projecturls.png?raw=true)
-- admin.py result summary:
+	- admin.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-admin.png?raw=true)
-- test_admin.py result summary:
+	- test_admin.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-admin.png?raw=true)
-- forms.py result summary:
+	- forms.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-forms.png?raw=true)
-- test_forms.py result summary:
+	- test_forms.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-forms.png?raw=true)
-- models.py result summary:
+	- models.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-models.png?raw=true)
-- test_models.py result summary:
+	- test_models.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-models.png?raw=true)
-- views.py result summary:
+	- views.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-views.png?raw=true)
-- test_views.py result summary:
+	- test_views.py result summary:
 ![PEP 8 validation image](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/pythonlinter-test-views.png?raw=true)
 
 ### Automated Testing
 
 -   [Jest](https://jestjs.io/)  was used to test the application javascript and jQuery code. The functionality tested was the code to fade out, slide up and remove any raised alert messages after a 5 second delay. The code is located in [Script JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/script.js), the test is located in  [Test JS](https://github.com/SamarZiadat/oishii-ramen/blob/main/static/js/tests/script.test.js). 
 
-- By installing the Jest framework and using the npm test command the following test suites were completed:
+	- By installing the Jest framework and using the npm test command the following test suites were completed:
 ![Jest testing](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/jest-testing.png?raw=true)
 
--   [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/)  and Django TestCase was used to create automatic tests for Python files. The test reporting tool ’Coverage’ was installed to show the percentage of Python code that’s been covered by tests.
-    
--   A total of 25 tests were written for the following files :
+-   [Django testing tools](https://docs.djangoproject.com/en/3.2/topics/testing/tools/)  and Django TestCase was used to create automatic tests for Python files. A total of 25 tests were written for the following files:
     
     -   [forms.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/forms.py)  test file:  [test_forms.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_forms.py)
     -   [models.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/models.py)  test file:  [test_models.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_models.py)
     -   [views.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/views.py)  test file:  [test_views.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_views.py)
     -   [admin.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/admin.py)  test file:  [test_admin.py](https://github.com/SamarZiadat/oishii-ramen/blob/main/booking/test_admin.py)  (tests were added for the customizations made to the django admin functionality)
--   Django test results and coverage:
+    
+-   The Django's test reporting tool '[Coverage](https://coverage.readthedocs.io/en/7.2.7/)' was installed to show the percentage of Python code that’s been covered by tests:
 ![enter image description here](https://github.com/SamarZiadat/oishii-ramen/blob/main/documentation/testing/coverage-django-testing.png?raw=true)
+
 ## Deployment
 
 ### Version Control
@@ -244,4 +291,3 @@ Most commonly, forks are used to either propose changes to someone else's projec
     
 -   This will create a duplicate of the full project in your GitHub Repository.
    
-
